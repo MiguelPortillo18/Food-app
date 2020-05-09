@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="button_style">
+        <item name="fontFamily"> @font/adamina</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#101C5E</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <style name="font_style">
+        <item name="fontFamily">@font/adamina</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">#101C5E</item>
+    </style>
+
 </resources>

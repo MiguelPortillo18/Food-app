@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">All My Food</string>
+    <string name="register_text"> <u>Registrate</u></string>
+    <string name="login_text">Iniciar sesión</string>
+    <string name="forgotpass_text"> <u>¿Olvidaste tu contraseña?</u></string>
+    <string name="newuser_question">¿Usuario nuevo?</string>
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="password_hint">Tu contraseña</string>
 </resources>
