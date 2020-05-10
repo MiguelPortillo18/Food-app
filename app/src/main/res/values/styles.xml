@@ -24,4 +24,11 @@
         <item name="android:textColor">#101C5E</item>
     </style>
 
+    <style name="fontBig_style">
+        <item name="fontFamily">@font/adamina</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/welcome_text_size</item>
+        <item name="android:textColor">#101C5E</item>
+    </style>
+
 </resources>

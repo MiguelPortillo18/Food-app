@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".TitleFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:hint="@string/username_hint"
+            app:layout_constraintBottom_toBottomOf="@+id/et_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.77" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/btn_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.88" />
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:paddingLeft="@dimen/margin_wide"
+            android:paddingRight="@dimen/margin_wide"
+            android:text="@string/login_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <TextView
+            android:id="@+id/tv_forgotpass"
+            style="@style/font_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:fontFamily="@font/adamina"
+            android:text="@string/forgotpass_text"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <TextView
+            android:id="@+id/tv_newusr_question"
+            style="@style/font_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:text="@string/newuser_question"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forgotpass"
+            app:layout_constraintVertical_bias="0.41000003" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            style="@style/font_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="@dimen/margin_wide"
+            android:text="@string/register_text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_newusr_question"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toEndOf="@+id/tv_newusr_question" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="179dp"
+            android:layout_height="171dp"
+            android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:src="@android:mipmap/sym_def_app_icon"
+            app:layout_constraintBottom_toTopOf="@+id/et_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
