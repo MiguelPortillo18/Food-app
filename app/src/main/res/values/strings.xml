@@ -12,4 +12,9 @@
     <string name="welcome_text">¡Bienvenido, @User!</string>
     <string name="about">About</string>
     <string name="about_text">All My Food es una aplicación que te permitirá preparar miles de deliciosas recetas para que las disfrutes con tus familiares y amigos. \n\nTambién te permitirá conocer nuevas recetas subidas por la comunidad de usuarios y así puedas expandir tus conocimientos de cocina. \n\nPodrás ver recetas muy detalladas y con contenido visual interactivo, con el que podrás crear con éxito todas las recetas que quieras.</string>
+    <string name="explore_text">Explorar</string>
+    <string name="mylist_text">Mi lista</string>
+    <string name="myrecipes_text">Mis recetas</string>
+    <string name="create_recipe_text">Nueva receta</string>
+    <string name="getout_text">Salir</string>
 </resources>
