@@ -15,6 +15,9 @@
             app:destination="@id/welcomeFragment"
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/action_titleFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -46,4 +49,13 @@
         android:name="com.example.allmyfood.CreateRecipeFragment"
         android:label="fragment_create_recipe"
         tools:layout="@layout/fragment_create_recipe" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.allmyfood.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
 </navigation>

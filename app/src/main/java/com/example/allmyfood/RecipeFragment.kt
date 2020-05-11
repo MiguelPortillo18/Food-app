@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * A simple [Fragment] subclass.
@@ -15,6 +16,9 @@ class RecipeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_recipe)
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_recipe, container, false)
     }
