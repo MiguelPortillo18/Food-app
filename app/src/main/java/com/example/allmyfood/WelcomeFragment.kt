@@ -1,18 +1,20 @@
 package com.example.allmyfood
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import com.example.allmyfood.databinding.FragmentWelcomeBinding
 
 /**
  * A simple [Fragment] subclass.
  */
 class WelcomeFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,8 +22,9 @@ class WelcomeFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_Allmyfood)
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_welcome, container, false)
+        val binding = DataBindingUtil.inflate<FragmentWelcomeBinding>(inflater, R.layout.fragment_welcome, container, false)
+
+        return binding.root
     }
 
 }
