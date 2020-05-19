@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.allmyfood.databinding.FragmentTitleBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
 /**
  * A simple [Fragment] subclass.
@@ -21,13 +23,18 @@ class TitleFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_login)
 
-        var binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater, R.layout.fragment_title, container, false)
+        var binding = DataBindingUtil.inflate<FragmentTitleBinding>(
+            inflater,
+            R.layout.fragment_title,
+            container,
+            false
+        )
 
-        binding.btnLogin.setOnClickListener{
+        binding.btnLogin.setOnClickListener {
             it.findNavController().navigate(R.id.action_titleFragment_to_welcomeFragment)
         }
 
-        binding.tvRegister.setOnClickListener{
+        binding.tvRegister.setOnClickListener {
             it.findNavController().navigate(R.id.action_titleFragment_to_registerFragment)
         }
 
@@ -38,11 +45,13 @@ class TitleFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.options_menu,menu)
+        inflater.inflate(R.menu.options_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item!!,
-            view!!.findNavController()) || super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(
+            item,
+            view!!.findNavController()
+        ) || super.onOptionsItemSelected(item)
     }
 }

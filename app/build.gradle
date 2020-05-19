@@ -11,6 +11,10 @@ android {
         enabled = true
     }
 
+    dependencies {
+        implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    }
+
     defaultConfig {
         applicationId "com.example.allmyfood"
         minSdkVersion 19
