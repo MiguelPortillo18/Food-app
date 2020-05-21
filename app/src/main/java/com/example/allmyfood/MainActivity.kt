@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<SignInButton>(R.id.sign_in_button).setOnClickListener(onClick)
         findViewById<TextView>(R.id.tv_register).setOnClickListener(onClickRegisterTv)
+        findViewById<Button>(R.id.btn_login).setOnClickListener(onClickBtnLogin)
     }
 
     override fun onStart() {
@@ -49,6 +50,11 @@ class MainActivity : AppCompatActivity() {
 
     private var onClickRegisterTv = View.OnClickListener {
         var intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
+    }
+
+    private var onClickBtnLogin = View.OnClickListener {
+        var intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 
