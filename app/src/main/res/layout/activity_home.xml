@@ -7,14 +7,14 @@
     <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/drawerLayout">
+        android:id="@+id/drawerLayout"
+        tools:context=".HomeActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:context=".HomeActivity">
+            app:layout_constraintStart_toStartOf="parent">
 
             <fragment
                 android:id="@+id/myNavHostFragment"
@@ -22,6 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:defaultNavHost="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:navGraph="@navigation/navigation" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -31,9 +33,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/navdrawer_menu" />
-
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
