@@ -7,7 +7,10 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class RegisterActivity : AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTitle(getString(R.string.title_register))
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         findViewById<Button>(R.id.btn_register).setOnClickListener(onClickRegister)
