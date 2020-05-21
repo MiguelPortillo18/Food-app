@@ -1,4 +1,6 @@
 package com.example.allmyfood
 
-class HomeActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class HomeActivity : AppCompatActivity(){
 }
