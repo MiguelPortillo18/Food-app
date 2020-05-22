@@ -30,6 +30,7 @@ class WelcomeFragment : Fragment() {
             container,
             false
         )
+
         setHasOptionsMenu(true)
 
         return binding.root
@@ -37,7 +38,7 @@ class WelcomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.navdrawer_menu, menu)
+        inflater?.inflate(R.menu.options_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

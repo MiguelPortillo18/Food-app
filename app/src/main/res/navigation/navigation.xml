@@ -35,4 +35,9 @@
         android:name="com.example.allmyfood.CreateRecipeFragment"
         android:label="fragment_create_recipe"
         tools:layout="@layout/fragment_create_recipe" />
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.allmyfood.RecipeFragment"
+        android:label="fragment_recipe"
+        tools:layout="@layout/fragment_recipe" />
 </navigation>
