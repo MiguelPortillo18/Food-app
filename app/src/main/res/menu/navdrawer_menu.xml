@@ -12,7 +12,7 @@
         android:title="@string/mylist_text" />
     <item
         android:id="@+id/myRecipesFragment"
-        android:icon="@drawable/ic_android_black"
+        android:icon="@drawable/ic_food"
         android:title="@string/myrecipes_text" />
     <item
         android:id="@+id/createRecipeFragment"
