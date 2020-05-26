@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">All My Food</string>
+    <string name="register_text"> <u>Registrate</u></string>
+    <string name="login_text">Iniciar sesión</string>
+    <string name="forgotpass_text"> <u>¿Olvidaste tu contraseña?</u></string>
+    <string name="newuser_question">¿Usuario nuevo?</string>
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="password_hint">Tu contraseña</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text">¡Bienvenido, @User!</string>
+    <string name="about">About</string>
+    <string name="about_text">All My Food es una aplicación que te permitirá preparar miles de deliciosas recetas para que las disfrutes con tus familiares y amigos. \n\nTambién te permitirá conocer nuevas recetas subidas por la comunidad de usuarios y así puedas expandir tus conocimientos de cocina. \n\nPodrás ver recetas muy detalladas y con contenido visual interactivo, con el que podrás crear con éxito todas las recetas que quieras.</string>
+    <string name="explore_text">Explorar</string>
+    <string name="mylist_text">Mi lista</string>
+    <string name="myrecipes_text">Mis recetas</string>
+    <string name="create_recipe_text">Nueva receta</string>
+    <string name="getout_text">Salir</string>
+    <string name="fullname_hint">Nombre completo</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="tv_add_photo">Añade una foto de perfil:</string>
+    <string name="btn_reg_text">Registrarse</string>
+    <string name="title_login">Iniciar Sesión - All My Food</string>
+    <string name="title_register">Registrate - All My Food</string>
+    <string name="title_about">About All My Food</string>
+    <string name="title_Allmyfood">All My Food</string>
+    <string name="title_explore">Explorar</string>
+    <string name="title_my_list">Mi lista</string>
+    <string name="title_my_recipe">Mis Recetas</string>
+    <string name="title_recipe">Receta</string>
+    <string name="title_create_recipe">Crear receta</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="hint_confirmPass">Confirmar contraseña</string>
+</resources>

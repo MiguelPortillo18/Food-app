@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\User\\Desktop\\AllMyFood\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_welcome.xml",
+        "source": "C:\\Users\\User\\Desktop\\AllMyFood\\app\\src\\main\\res\\layout\\fragment_welcome.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\AllMyFood\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
+        "source": "C:\\Users\\User\\Desktop\\AllMyFood\\app\\src\\main\\res\\layout\\activity_home.xml"
+    }
+]
