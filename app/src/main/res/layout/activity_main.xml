@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
     <EditText
         android:id="@+id/et_username"
@@ -132,7 +133,7 @@
         android:layout_marginEnd="@dimen/margin_wide"
         android:layout_marginBottom="@dimen/margin_wide"
         android:contentDescription="@string/title_Allmyfood"
-        android:src="@android:mipmap/sym_def_app_icon"
+        android:src="@drawable/app_logo"
         app:layout_constraintBottom_toTopOf="@+id/et_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
