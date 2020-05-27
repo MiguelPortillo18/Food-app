@@ -19,7 +19,11 @@
         android:id="@+id/exploreFragment"
         android:name="com.example.allmyfood.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mylistFragment"
         android:name="com.example.allmyfood.MylistFragment"

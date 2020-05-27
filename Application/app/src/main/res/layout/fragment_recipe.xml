@@ -1,14 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RecipeFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_margin="@dimen/margin_wide"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_my_recipe_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardCornerRadius="@dimen/margin_wide">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Buttons -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|end"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <!-- Title and supporting text -->
+                    <TextView
+                        style="@style/font_style_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_wide"
+                        android:text="Pupusas de chicharrón"
+                        android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                    <!-- Media -->
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="Description of the card"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/photo" />
+
+                    <TextView
+                        style="@style/font_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_wide"
+                        android:text="Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos no solo en El Salvador sino en muchos paises latinos."
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?android:attr/textColorSecondary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/font_style_grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_wide"
+                        android:text="@string/string_ingredients" />
+
+                    <ListView
+                        android:id="@+id/listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="197dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="402dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/font_style_grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_wide"
+                        android:text="@string/text_preparacion" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
+                        style="@style/checkBox_style"
+                        android:text="Engrasar la plancha" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
+                        style="@style/checkBox_style"
+                        android:text="Preparar la masa" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
+                        style="@style/checkBox_style"
+                        android:text="Crear las tortillas" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="61dp"
+                        android:layout_marginStart="@dimen/margin_wide"
+                        style="@style/checkBox_style"
+                        android:text="Agregar los ingredientes" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="61dp"
+                        android:layout_marginStart="@dimen/margin_wide"
+                        style="@style/checkBox_style"
+                        android:text="Ponerla en la plancha (5-min)" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="61dp"
+                        android:layout_marginStart="@dimen/margin_wide"
+                        style="@style/checkBox_style"
+                        android:text="Servir con salsa y curtido" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginBottom="@dimen/margin_wide"
+                    android:src="@drawable/ic_baseline_remove_circle_black" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

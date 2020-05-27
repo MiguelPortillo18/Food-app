@@ -61,4 +61,7 @@
         <item name="android:background">@drawable/linearlayout_borders</item>
     </style>
 
+    <style name="checkBox_style">
+        <item name="colorBackgroundFloating">@color/colorPrimary</item>
+    </style>
 </resources>
