@@ -6,7 +6,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".WelcomeFragment">
+        tools:context=".WelcomeFragment"
+        android:background="@drawable/background">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imv_title"

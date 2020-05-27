@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:padding="@dimen/margin_wide"
     android:layout_height="192dp"
-    android:background="@color/colorAccent"
+    android:background="@color/nav_header_color"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView

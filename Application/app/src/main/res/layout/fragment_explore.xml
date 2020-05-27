@@ -14,7 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_big"
-            android:background="#9A00966C"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:cardCornerRadius="@dimen/margin_wide">
 
@@ -32,13 +31,13 @@
                     android:orientation="vertical"
                     android:padding="0dp">
 
-                    <!-- Title, secondary and supporting text -->
+                    <!-- Title and supporting text -->
                     <TextView
-                        style="@style/font_style"
+                        style="@style/font_style_grey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_wide"
-                        android:text="TITLE"
+                        android:text="Pupusas de chicharrón"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
 
                     <!-- Media -->
@@ -55,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_wide"
-                        android:text="Supporting text fefgewf efefe ggdvdvdsggds gdgsdgsdgdvb xcbsdgdgd gdsgdsvdsgdsg"
+                        android:text="Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de los salvadoreños..."
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary" />
 
@@ -78,7 +77,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_big"
-            android:background="#9A00966C"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:cardCornerRadius="@dimen/margin_wide">
 
@@ -96,13 +94,13 @@
                     android:orientation="vertical"
                     android:padding="0dp">
 
-                    <!-- Title, secondary and supporting text -->
+                    <!-- Title and supporting text -->
                     <TextView
-                        style="@style/font_style"
+                        style="@style/font_style_grey"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_wide"
-                        android:text="TITLE"
+                        android:text="Tacos al Pastor"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
 
                     <!-- Media -->
@@ -119,7 +117,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_wide"
-                        android:text="Supporting text fefgewf efefe ggdvdvdsggds gdgsdgsdgdvb xcbsdgdgd gdsgdsvdsgdsg"
+                        android:text="Receta práctica para preparar unos deliciosos Tacos al Pastor, el platillo favorito de la gastronomía mexicana traído hasta nuestro país..."
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary" />
 

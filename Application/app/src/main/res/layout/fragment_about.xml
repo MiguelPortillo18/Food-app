@@ -28,14 +28,13 @@
 
         <TextView
             android:id="@+id/tv_about_text"
-            style="@style/font_style_grey"
+            style="@style/font_style_about"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_big"
             android:layout_marginTop="@dimen/margin_wide"
             android:layout_marginEnd="@dimen/margin_big"
             android:layout_marginBottom="@dimen/margin_wide"
-            android:background="#8FEAE1"
             android:text="@string/about_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
