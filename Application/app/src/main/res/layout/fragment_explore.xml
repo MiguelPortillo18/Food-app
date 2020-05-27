@@ -1,28 +1,23 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_one"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_big"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            app:cardCornerRadius="@dimen/margin_small">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_explore_one"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <!-- Buttons -->
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_big"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardCornerRadius="@dimen/margin_wide">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -40,52 +35,64 @@
                         android:text="Pupusas de chicharrón"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
 
-                    <!-- Media -->
+                    <!-- Buttons -->
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:contentDescription="Description of the card"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/photo" />
+                        android:gravity="start|end"
+                        android:orientation="vertical"
+                        android:padding="0dp">
 
-                    <TextView
-                        style="@style/font_style_grey"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_wide"
-                        android:text="Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de los salvadoreños..."
-                        android:textAppearance="?attr/textAppearanceBody2"
-                        android:textColor="?android:attr/textColorSecondary" />
+                        <!-- Title and supporting text -->
+                        <TextView
+                            style="@style/font_style_grey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_wide"
+                            android:text="Pupusas de chicharrón"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <!-- Media -->
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Description of the card"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/photo" />
+
+                        <TextView
+                            style="@style/font_style_grey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_wide"
+                            android:text="Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos, no solo en El Salvador..."
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btn_extend_recipe"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="@dimen/margin_wide"
+                        android:layout_marginBottom="@dimen/margin_wide"
+                        app:srcCompat="@drawable/ic_add_circle_black" />
 
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_wide"
-                    android:src="@drawable/ic_add_circle_black" />
+            </com.google.android.material.card.MaterialCardView>
 
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_big"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            app:cardCornerRadius="@dimen/margin_small">
-
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_explore_two"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <!-- Buttons -->
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_big"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardCornerRadius="@dimen/margin_wide">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -100,40 +107,60 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_wide"
-                        android:text="Tacos al Pastor"
+                        android:text="Pupusas de chicharrón"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
 
-                    <!-- Media -->
+                    <!-- Buttons -->
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:contentDescription="Description of the card"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/photo" />
+                        android:gravity="start|end"
+                        android:orientation="vertical"
+                        android:padding="0dp">
 
-                    <TextView
-                        style="@style/font_style_grey"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_wide"
-                        android:text="Receta práctica para preparar unos deliciosos Tacos al Pastor, el platillo favorito de la gastronomía mexicana traído hasta nuestro país..."
-                        android:textAppearance="?attr/textAppearanceBody2"
-                        android:textColor="?android:attr/textColorSecondary" />
+                        <!-- Title and supporting text -->
+                        <TextView
+                            style="@style/font_style_grey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_wide"
+                            android:text="Pupusas de chicharrón"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <!-- Media -->
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="Description of the card"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/photo" />
+
+                        <TextView
+                            style="@style/font_style_grey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_wide"
+                            android:text="Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos, no solo en El Salvador..."
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btn_extend_recipe_two"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="@dimen/margin_wide"
+                        android:layout_marginBottom="@dimen/margin_wide"
+                        app:srcCompat="@drawable/ic_add_circle_black" />
 
                 </LinearLayout>
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_wide"
-                    android:src="@drawable/ic_add_circle_black" />
+            </com.google.android.material.card.MaterialCardView>
 
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</layout>

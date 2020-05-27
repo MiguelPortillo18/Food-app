@@ -40,4 +40,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="hint_confirmPass">Confirmar contraseña</string>
+    <string name="string_ingredients">Ingredientes:</string>
+    <string name="text_preparacion">Preparación:</string>
 </resources>
