@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_wide"
         android:orientation="vertical">
 
@@ -38,7 +38,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_wide"
-                        android:text="Pupusas de chicharrón"
+                        android:text="@string/card_text_title_one"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
 
                     <!-- Media -->
@@ -46,7 +46,6 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:contentDescription="Description of the card"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/photo" />
 
@@ -55,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_wide"
-                        android:text="Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos no solo en El Salvador sino en muchos paises latinos."
+                        android:text="@string/card_desc_complete"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary" />
 
@@ -97,42 +96,42 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_wide"
                         style="@style/checkBox_style"
-                        android:text="Engrasar la plancha" />
+                        android:text="@string/check_text_one" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_wide"
                         style="@style/checkBox_style"
-                        android:text="Preparar la masa" />
+                        android:text="@string/chekck_text_two" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_wide"
                         style="@style/checkBox_style"
-                        android:text="Crear las tortillas" />
+                        android:text="@string/check_text_three" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="61dp"
                         android:layout_marginStart="@dimen/margin_wide"
                         style="@style/checkBox_style"
-                        android:text="Agregar los ingredientes" />
+                        android:text="@string/check_text_four" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="61dp"
                         android:layout_marginStart="@dimen/margin_wide"
                         style="@style/checkBox_style"
-                        android:text="Ponerla en la plancha (5-min)" />
+                        android:text="@string/check_text_five" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="61dp"
                         android:layout_marginStart="@dimen/margin_wide"
                         style="@style/checkBox_style"
-                        android:text="Servir con salsa y curtido" />
+                        android:text="@string/check_text_six" />
 
                 </LinearLayout>
 

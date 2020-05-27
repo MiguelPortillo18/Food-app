@@ -46,4 +46,11 @@
     <string name="text_desc_card_one">Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos, no solo en El Salvador...</string>
     <string name="text_title_card_two">Tacos al Pastor</string>
     <string name="text_desc_card_two">Receta práctica para preparar unos deliciosos Tacos al Pastor, el platillo favorito de la gastronomía mexicana traído hasta nuestro país...</string>
+    <string name="card_desc_complete">Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos no solo en El Salvador sino en muchos paises latinos.</string>
+    <string name="check_text_one">Engrasar la plancha</string>
+    <string name="chekck_text_two">Preparar la masa</string>
+    <string name="check_text_three">Crear las tortillas</string>
+    <string name="check_text_four">Agregar los ingredientes</string>
+    <string name="check_text_five">Ponerla en la plancha (5-min)</string>
+    <string name="check_text_six">Servir con salsa y curtido</string>
 </resources>
