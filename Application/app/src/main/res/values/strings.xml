@@ -42,4 +42,5 @@
     <string name="hint_confirmPass">Confirmar contraseña</string>
     <string name="string_ingredients">Ingredientes:</string>
     <string name="text_preparacion">Preparación:</string>
+    <string name="itemList">Items</string>
 </resources>
