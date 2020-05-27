@@ -6,18 +6,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:padding="@dimen/margin_wide"
-    android:layout_height="192dp"
-    android:background="@color/nav_header_color"
+    android:layout_height="wrap_content"
+    android:background="@color/color_primary_dark"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/imv_logo"
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitCenter"
+        android:layout_height="100dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:mipmap/sym_def_app_icon" />
+        app:layout_constraintVertical_bias="0.507">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_Allmyfood"
+            style="@style/font_logo"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

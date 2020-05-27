@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/textView"
-            style="@style/fontBig_style"
+            style="@style/font_style_grey_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_wide"
@@ -41,20 +41,42 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.954" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="267dp"
-            android:layout_height="169dp"
-            android:layout_marginStart="@dimen/margin_wide"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_wide"
             android:layout_marginBottom="@dimen/margin_wide"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/imv_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/app_logo" />
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="179dp"
+                android:layout_height="171dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:contentDescription="@string/title_Allmyfood"
+                app:layout_constraintBottom_toTopOf="@+id/et_username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.51"
+                app:srcCompat="@drawable/ic_app_logo" />
+
+            <TextView
+                style="@style/font_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/title_Allmyfood" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

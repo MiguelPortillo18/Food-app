@@ -7,6 +7,42 @@
     android:background="@drawable/background">
 
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="179dp"
+                    android:layout_height="171dp"
+                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginTop="@dimen/margin_wide"
+                    android:layout_marginEnd="@dimen/margin_wide"
+                    android:layout_marginBottom="@dimen/margin_wide"
+                    android:contentDescription="@string/title_Allmyfood"
+                    app:layout_constraintBottom_toTopOf="@+id/et_username"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.51"
+                    app:srcCompat="@drawable/ic_app_logo" />
+
+                <TextView
+                    style="@style/font_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/title_Allmyfood" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/linearLayout"
             style="@style/fillgroupStyle"
             android:layout_width="match_parent"
@@ -19,8 +55,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.39">
+            app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
                     android:id="@+id/et_regUsr"

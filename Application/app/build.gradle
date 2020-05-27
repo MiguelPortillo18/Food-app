@@ -12,6 +12,7 @@ android {
     }
 
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.example.allmyfood"
         minSdkVersion 19
         targetSdkVersion 29

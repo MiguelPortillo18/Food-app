@@ -9,7 +9,7 @@
     </style>
 
     <style name="button_style">
-        <item name="fontFamily">@font/montserrat</item>
+        <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textSize">@dimen/button_text_size</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textStyle">bold</item>
@@ -18,41 +18,62 @@
     </style>
 
     <style name="font_style">
-        <item name="fontFamily">@font/montserrat</item>
+        <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size</item>
         <item name="android:textColor">@color/secondary_color</item>
     </style>
 
     <style name="font_style_grey">
-        <item name="fontFamily">@font/montserrat</item>
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/aux_color</item>
+    </style>
+
+    <style name="font_style_grey_bold">
+        <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size</item>
         <item name="android:textColor">@color/aux_color</item>
     </style>
 
+    <style name="font_style_grey_bold_title">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textColor">@color/aux_color</item>
+    </style>
+
+    <style name="font_logo">
+        <item name="fontFamily">@font/fredoka_one</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_logo</item>
+    </style>
+
     <style name="font_style_about">
-        <item name="fontFamily">@font/montserrat</item>
+        <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size</item>
         <item name="android:textColor">@color/aux_color1</item>
     </style>
 
     <style name="font_small_style">
-        <item name="fontFamily">@font/montserrat</item>
+        <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_small</item>
         <item name="android:textColor">@color/secondary_color</item>
     </style>
 
     <style name="fontBig_style">
-        <item name="fontFamily">@font/montserrat</item>
+        <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/welcome_text_size</item>
         <item name="android:textColor">#101C5E</item>
     </style>
 
     <style name="editText_style">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:background">@drawable/et_borders</item>
         <item name="android:padding">@dimen/margin_small</item>
     </style>
