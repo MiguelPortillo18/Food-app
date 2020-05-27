@@ -142,7 +142,8 @@
                     android:layout_gravity="end"
                     android:layout_marginStart="@dimen/margin_wide"
                     android:layout_marginBottom="@dimen/margin_wide"
-                    android:src="@drawable/ic_baseline_remove_circle_black" />
+                    android:tint="@android:color/black"
+                    app:srcCompat="@drawable/ic_baseline_remove_circle_black" />
 
             </LinearLayout>
 

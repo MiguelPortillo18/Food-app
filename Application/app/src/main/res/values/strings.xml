@@ -42,4 +42,8 @@
     <string name="hint_confirmPass">Confirmar contraseña</string>
     <string name="string_ingredients">Ingredientes:</string>
     <string name="text_preparacion">Preparación:</string>
+    <string name="card_text_title_one">Pupusas de chicharrón</string>
+    <string name="text_desc_card_one">Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos, no solo en El Salvador...</string>
+    <string name="text_title_card_two">Tacos al Pastor</string>
+    <string name="text_desc_card_two">Receta práctica para preparar unos deliciosos Tacos al Pastor, el platillo favorito de la gastronomía mexicana traído hasta nuestro país...</string>
 </resources>

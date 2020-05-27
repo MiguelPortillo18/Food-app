@@ -144,7 +144,7 @@
             android:layout_marginStart="@dimen/margin_wide"
             android:layout_marginTop="@dimen/margin_wide"
             android:layout_marginEnd="@dimen/margin_wide"
-            android:layout_marginBottom="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_small"
             android:contentDescription="@string/title_Allmyfood"
             app:layout_constraintBottom_toTopOf="@+id/et_username"
             app:layout_constraintEnd_toEndOf="parent"

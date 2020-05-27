@@ -7,10 +7,10 @@
     android:background="@drawable/background">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="205dp"
+            android:layout_height="180dp"
             android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginBottom="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_big"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -19,12 +19,12 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="179dp"
-                    android:layout_height="171dp"
+                    android:layout_width="181dp"
+                    android:layout_height="113dp"
                     android:layout_marginStart="@dimen/margin_wide"
                     android:layout_marginTop="@dimen/margin_wide"
                     android:layout_marginEnd="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_wide"
+                    android:layout_marginBottom="@dimen/margin_small"
                     android:contentDescription="@string/title_Allmyfood"
                     app:layout_constraintBottom_toTopOf="@+id/et_username"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45">
 
                 <EditText
                     android:id="@+id/et_regUsr"
@@ -105,7 +106,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="0.120000005">
 
                 <EditText
                     android:id="@+id/et_regPass"
@@ -137,11 +138,12 @@
         <Button
             android:id="@+id/btn_register"
             style="@style/button_style"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_marginStart="@dimen/margin_bigger"
+            android:layout_marginTop="@dimen/margin_big"
+            android:layout_marginEnd="@dimen/margin_bigger"
+            android:layout_marginBottom="@dimen/margin_wide"
             android:paddingLeft="@dimen/margin_wide"
             android:paddingRight="@dimen/margin_wide"
             android:text="@string/btn_reg_text"

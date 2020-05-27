@@ -5,7 +5,7 @@
     <dimen name="text_size">18sp</dimen>
     <dimen name="text_size_title">20sp</dimen>
     <dimen name="text_small">14sp</dimen>
-    <dimen name="text_logo">32sp</dimen>
+    <dimen name="text_logo">30sp</dimen>
     <dimen name="margin_big">32dp</dimen>
     <dimen name="welcome_text_size">30sp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
