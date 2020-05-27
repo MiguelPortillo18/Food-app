@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -32,7 +32,7 @@
                 android:layout_marginStart="@dimen/margin_wide"
                 android:layout_marginTop="@dimen/margin_wide"
                 android:layout_marginEnd="@dimen/margin_wide"
-                android:layout_marginBottom="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_small"
                 android:contentDescription="@string/title_Allmyfood"
                 app:layout_constraintBottom_toTopOf="@+id/et_username"
                 app:layout_constraintEnd_toEndOf="parent"
