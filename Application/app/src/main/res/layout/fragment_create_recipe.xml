@@ -47,9 +47,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="130dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/photo" />
+                            app:srcCompat="@drawable/pupusas" />
 
                         <EditText
                             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/font_style_grey"
+                            style="@style/font_style_grey_bold_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/margin_wide"
@@ -105,7 +105,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/font_style_grey"
+                            style="@style/font_style_grey_bold_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/margin_wide"

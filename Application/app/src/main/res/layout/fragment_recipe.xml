@@ -36,7 +36,7 @@
 
                         <!-- Title and supporting text -->
                         <TextView
-                            style="@style/font_style_grey"
+                            style="@style/font_style_grey_bold_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_wide"
@@ -47,9 +47,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="130dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/photo" />
+                            app:srcCompat="@drawable/pupusas" />
 
                         <TextView
                             style="@style/font_style"
@@ -68,7 +68,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/font_style_grey"
+                            style="@style/font_style_grey_bold_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/margin_wide"
@@ -87,7 +87,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/font_style_grey"
+                            style="@style/font_style_grey_bold_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/margin_wide"
