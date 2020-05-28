@@ -53,4 +53,14 @@
     <string name="check_text_four">Agregar los ingredientes</string>
     <string name="check_text_five">Ponerla en la plancha (5-min)</string>
     <string name="check_text_six">Servir con salsa y curtido</string>
+    <string name="recipe_name_hint">Nombre de tu receta</string>
+    <string name="add_desc_hint">Descripción de tu receta:</string>
+    <string name="add_ingredients_hint">Agrega los ingredientes de tu receta:</string>
+    <string name="add_steps_hint">Agrega los pasos para preparar tu receta:</string>
+    <string name="new_ingredient_hint">Nuevo ingrediente</string>
+    <string name="step_one_text">Paso 1</string>
+    <string name="step_two_text">Paso 2</string>
+    <string name="step_four_text">Nuevo paso...</string>
+    <string name="step_three_text">Paso 3</string>
+    <string name="save_recipe_text">Guardar receta</string>
 </resources>
