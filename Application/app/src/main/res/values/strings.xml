@@ -26,7 +26,8 @@
     <string name="title_about">About All My Food</string>
     <string name="title_Allmyfood">All My Food</string>
     <string name="title_explore">Explorar</string>
-    <string name="title_my_list">Mi lista</string>
+    <string name="title_my_list">Mi lista de compras</string>
+    <string name="title_shop_list">Mis listas de compras</string>
     <string name="title_my_recipe">Mis Recetas</string>
     <string name="title_recipe">Receta</string>
     <string name="title_create_recipe">Crear receta</string>
@@ -54,4 +55,22 @@
     <string name="check_text_four">Agregar los ingredientes</string>
     <string name="check_text_five">Ponerla en la plancha (5-min)</string>
     <string name="check_text_six">Servir con salsa y curtido</string>
+    <string name="recipe_name_hint">Nombre de tu receta</string>
+    <string name="add_desc_hint">Descripción de tu receta:</string>
+    <string name="add_ingredients_hint">Agrega los ingredientes de tu receta:</string>
+    <string name="add_steps_hint">Agrega los pasos para preparar tu receta:</string>
+    <string name="new_ingredient_hint">Nuevo ingrediente</string>
+    <string name="step_one_text">Paso 1</string>
+    <string name="step_two_text">Paso 2</string>
+    <string name="step_four_text">Nuevo paso...</string>
+    <string name="step_three_text">Paso 3</string>
+    <string name="save_recipe_text">Guardar receta</string>
+    <string name="selection_list_text">Listas de compras</string>
+    <string name="my_list_text">Mis listas de compras</string>
+    <string name="item_mylist_text_one">Carne molida</string>
+    <string name="item_mylist_text_two">Queso cheddar</string>
+    <string name="item_mylist_text_three">Pan para hamburguesa</string>
+    <string name="item_mylist_text_four">Ketchup</string>
+    <string name="item_mylist_text_five">Lechuga</string>
+    <string name="item_mylist_text_six">Servilletas</string>
 </resources>

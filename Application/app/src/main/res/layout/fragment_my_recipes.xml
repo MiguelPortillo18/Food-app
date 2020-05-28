@@ -45,9 +45,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="130dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/photo" />
+                            app:srcCompat="@drawable/pupusas" />
 
                         <TextView
                             style="@style/font_style_grey"
@@ -107,9 +107,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="130dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/photo" />
+                            app:srcCompat="@drawable/tacos" />
 
                         <TextView
                             style="@style/font_style_grey"
