@@ -1,5 +1,15 @@
-# All My Food App
-
+  <h1 align="center">All My Food</h1>
+  <p align="center">
+    <a href="https://github.com/UCASV/entrega-de-proyecto-pdm-0120-editorial/releases/tag/v0.1.0">
+      <img src="https://img.shields.io/badge/pre%20release-v0.1.0-blue"/>
+    <a/>
+    <a href="https://github.com/Walter26/foodAPI">
+      <img src="https://img.shields.io/badge/npm-foodAPI-orange"/>
+    </a>
+    <img src="https://img.shields.io/badge/android--min-api%2019-lightgrey"/>
+    <img src="https://img.shields.io/badge/android--target-api%2029-lightgrey"/>
+  </p>
+  
 ## Summary
 [Tablero](#tablero-de-equipo)<br>
 [API](#trabajo-de-api)<br>
