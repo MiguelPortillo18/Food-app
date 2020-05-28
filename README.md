@@ -1,4 +1,6 @@
-  <h1 align="center">All My Food</h1>
+  <h1 align="center">All My Food <br><br>
+  <img src="./Img/app_logo.png" width="150px">
+  </h1>
   <p align="center">
     <a href="https://github.com/UCASV/entrega-de-proyecto-pdm-0120-editorial/releases/tag/v0.1.0">
       <img src="https://img.shields.io/badge/pre%20release-v0.1.0-blue"/>
@@ -25,3 +27,6 @@ API remota que provee los datos para poblar la app y tiene conexión remota a un
 con conexión Gmail a través de SendGrid. [Ver documentación](https://github.com/Walter26/foodAPI/tree/master#readme)
 
 ## Trabajo de la App
+
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
