@@ -26,7 +26,8 @@
     <string name="title_about">About All My Food</string>
     <string name="title_Allmyfood">All My Food</string>
     <string name="title_explore">Explorar</string>
-    <string name="title_my_list">Mi lista</string>
+    <string name="title_my_list">Mi lista de compras</string>
+    <string name="title_shop_list">Mis listas de compras</string>
     <string name="title_my_recipe">Mis Recetas</string>
     <string name="title_recipe">Receta</string>
     <string name="title_create_recipe">Crear receta</string>
@@ -64,4 +65,12 @@
     <string name="step_four_text">Nuevo paso...</string>
     <string name="step_three_text">Paso 3</string>
     <string name="save_recipe_text">Guardar receta</string>
+    <string name="selection_list_text">Listas de compras</string>
+    <string name="my_list_text">Mis listas de compras</string>
+    <string name="item_mylist_text_one">Carne molida</string>
+    <string name="item_mylist_text_two">Queso cheddar</string>
+    <string name="item_mylist_text_three">Pan para hamburguesa</string>
+    <string name="item_mylist_text_four">Ketchup</string>
+    <string name="item_mylist_text_five">Lechuga</string>
+    <string name="item_mylist_text_six">Servilletas</string>
 </resources>

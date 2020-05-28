@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MylistFragment">
 
     <ScrollView
@@ -37,66 +35,66 @@
 
                     <TextView
                         style="@style/font_style_grey_bold"
-                        android:paddingStart="30dp"
-                        android:paddingEnd="30dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/margin_wide"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
                         android:text="@string/itemList" />
 
                     <CheckBox
+                        style="@style/checkBox_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        style="@style/checkBox_style"
-                        android:text="Engrasar la plancha" />
+                        android:text="@string/item_mylist_text_one" />
 
                     <CheckBox
+                        style="@style/checkBox_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        style="@style/checkBox_style"
-                        android:text="Preparar la masa" />
+                        android:text="@string/item_mylist_text_two" />
 
                     <CheckBox
+                        style="@style/checkBox_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        style="@style/checkBox_style"
-                        android:text="Crear las tortillas" />
+                        android:text="@string/item_mylist_text_three" />
 
                     <CheckBox
+                        style="@style/checkBox_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        style="@style/checkBox_style"
-                        android:text="Agregar los ingredientes" />
+                        android:text="@string/item_mylist_text_four" />
 
                     <CheckBox
+                        style="@style/checkBox_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        style="@style/checkBox_style"
-                        android:text="Ponerla en la plancha (5-min)" />
+                        android:text="@string/item_mylist_text_five" />
 
                     <CheckBox
+                        style="@style/checkBox_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_wide"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        style="@style/checkBox_style"
-                        android:text="Servir con salsa y curtido" />
+                        android:text="@string/item_mylist_text_six" />
 
                     <ImageView
                         android:layout_width="50dp"

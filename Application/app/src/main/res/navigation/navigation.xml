@@ -25,7 +25,7 @@
             app:destination="@id/recipeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mylistFragment"
+        android:id="@+id/myListFragment"
         android:name="com.example.allmyfood.MylistFragment"
         android:label="fragment_mylist"
         tools:layout="@layout/fragment_mylist" />
@@ -46,6 +46,16 @@
         tools:layout="@layout/fragment_recipe" >
         <action
             android:id="@+id/action_recipeFragment_to_exploreFragment"
-            app:destination="@id/exploreFragment" />
+            app:destination="@id/exploreFragment"
+            app:popUpTo="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectionListFragment"
+        android:name="com.example.allmyfood.SelectionListFragment"
+        android:label="fragment_selection_list"
+        tools:layout="@layout/fragment_selection_list" >
+        <action
+            android:id="@+id/action_selectionListFragment_to_myListFragment"
+            app:destination="@id/myListFragment" />
     </fragment>
 </navigation>
