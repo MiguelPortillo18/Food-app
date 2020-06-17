@@ -6,5 +6,5 @@
         android:id="@+id/aboutFragment"
         android:icon="@drawable/ic_info"
         android:title="@string/about"
-        app:showAsAction="always|withText" />
+        app:showAsAction="always" />
 </menu>
