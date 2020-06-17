@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background"
+            tools:context=".WelcomeFragment">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imv_title"
+                android:layout_width="271dp"
+                android:layout_height="294dp"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:src="@drawable/photo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.709" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/font_style_grey_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:text="@string/welcome_text"
+                android:textSize="@dimen/welcome_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.954" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/imv_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="144dp"
+                    android:layout_height="137dp"
+                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginTop="@dimen/margin_wide"
+                    android:layout_marginEnd="@dimen/margin_wide"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:contentDescription="@string/title_Allmyfood"
+                    app:layout_constraintBottom_toTopOf="@+id/et_username"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.51"
+                    app:srcCompat="@drawable/ic_app_logo" />
+
+                <TextView
+                    style="@style/font_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/title_Allmyfood" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

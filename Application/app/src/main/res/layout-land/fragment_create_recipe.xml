@@ -1,0 +1,173 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_my_recipe_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardCornerRadius="@dimen/margin_wide">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1094dp"
+                    android:orientation="vertical">
+
+                    <!-- Buttons -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|end"
+                        android:orientation="vertical"
+                        android:padding="0dp">
+
+                        <!-- Title and supporting text -->
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_big"
+                            android:hint="@string/recipe_name_hint"
+                            android:padding="@dimen/margin_small" />
+
+                        <!-- Media -->
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/pupusas" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_big"
+                            android:hint="@string/add_desc_hint"
+                            android:padding="@dimen/margin_wide" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_style_grey_bold_title_tablet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/margin_wide"
+                            android:text="@string/add_ingredients_hint" />
+
+                        <ListView
+                            android:id="@+id/listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="197dp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_bigger"
+                            android:hint="@string/new_ingredient_hint"
+                            android:paddingStart="@dimen/margin_wide"
+                            android:paddingEnd="@dimen/margin_wide"
+                            android:paddingBottom="@dimen/margin_wide" />
+
+                        <ImageView
+                            android:id="@+id/btn_add_ingredient"
+                            android:layout_width="50dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            app:srcCompat="@drawable/ic_add_circle_black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="330dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_style_grey_bold_title_tablet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/margin_wide"
+                            android:text="@string/add_steps_hint" />
+
+                        <CheckBox
+                            style="@style/checkBox_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:text="@string/step_one_text" />
+
+                        <CheckBox
+                            style="@style/checkBox_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:text="@string/step_two_text" />
+
+                        <CheckBox
+                            style="@style/checkBox_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:text="@string/step_three_text" />
+
+                        <CheckBox
+                            style="@style/checkBox_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="61dp"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:text="@string/step_four_text" />
+
+                        <ImageView
+                            android:id="@+id/btn_add_step"
+                            android:layout_width="50dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            app:srcCompat="@drawable/ic_add_circle_black" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_save_recipe"
+                        style="@style/button_style_tablet"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/margin_bigger"
+                        android:layout_marginTop="@dimen/margin_big"
+                        android:layout_marginEnd="@dimen/margin_bigger"
+                        android:layout_marginBottom="@dimen/margin_big"
+                        android:paddingLeft="@dimen/margin_wide"
+                        android:paddingRight="@dimen/margin_wide"
+                        android:text="@string/save_recipe_text" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
