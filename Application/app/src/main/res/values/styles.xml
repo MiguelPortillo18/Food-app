@@ -17,6 +17,15 @@
         <item name="android:background">@drawable/button_borders</item>
     </style>
 
+    <style name="button_style_tablet">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textSize">@dimen/button_text_size_tablet</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/button_borders</item>
+    </style>
+
     <style name="font_style">
         <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
@@ -26,7 +35,13 @@
 
     <style name="font_style_grey">
         <item name="fontFamily">@font/segoe_ui</item>
-        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/aux_color</item>
+    </style>
+
+    <style name="font_style_grey_tablet">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textSize">@dimen/text_small_tablet</item>
         <item name="android:textColor">@color/aux_color</item>
     </style>
 
@@ -37,6 +52,13 @@
         <item name="android:textColor">@color/aux_color</item>
     </style>
 
+    <style name="font_style_grey_bold_tablet">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_tablet</item>
+        <item name="android:textColor">@color/aux_color</item>
+    </style>
+
     <style name="font_style_grey_bold_title">
         <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
@@ -44,10 +66,23 @@
         <item name="android:textColor">@color/aux_color</item>
     </style>
 
+    <style name="font_style_grey_bold_title_tablet">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_title_tablet</item>
+        <item name="android:textColor">@color/aux_color</item>
+    </style>
+
     <style name="font_logo">
         <item name="fontFamily">@font/fredoka_one</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">@dimen/text_logo</item>
+    </style>
+
+    <style name="font_logo_tablet">
+        <item name="fontFamily">@font/fredoka_one</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_logo_tablet</item>
     </style>
 
     <style name="font_style_about">
@@ -61,6 +96,13 @@
         <item name="fontFamily">@font/segoe_ui</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/secondary_color</item>
+    </style>
+
+    <style name="font_small_style_tablet">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_small_tablet</item>
         <item name="android:textColor">@color/secondary_color</item>
     </style>
 
@@ -84,5 +126,10 @@
 
     <style name="checkBox_style">
         <item name="colorBackgroundFloating">@color/colorPrimary</item>
+    </style>
+
+    <style name="checkBox_style_tablet">
+        <item name="colorBackgroundFloating">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/text_size_title_tablet</item>
     </style>
 </resources>
