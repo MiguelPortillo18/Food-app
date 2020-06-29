@@ -1,15 +1,13 @@
-package com.example.allmyfood
+package com.example.allmyfood.views
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.allmyfood.R
 import com.example.allmyfood.databinding.FragmentWelcomeBinding
 
 /**

@@ -1,4 +1,3 @@
 package com.example.allmyfood.models
 
-class DefaultResponse {
-}
+data class DefaultResponse(val error: Boolean, val message: String)

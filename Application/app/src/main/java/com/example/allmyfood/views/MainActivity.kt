@@ -1,4 +1,4 @@
-package com.example.allmyfood
+package com.example.allmyfood.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.allmyfood.R
+import com.example.allmyfood.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -25,21 +28,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        setContentView(R.layout.activity_main)
-        findViewById<SignInButton>(R.id.sign_in_button).setOnClickListener(onClick)
-        findViewById<TextView>(R.id.tv_register).setOnClickListener(onClickRegisterTv)
-        findViewById<Button>(R.id.btn_login).setOnClickListener(onClickBtnLogin)
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(
+            this,
+            R.layout.activity_main
+        )
+
+        binding.apply {
+            signInButton.setOnClickListener(onClick)
+            tvRegister.setOnClickListener(onClickRegisterTv)
+            btnLogin.setOnClickListener(onClickBtnLogin)
+        }
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater : MenuInflater = menuInflater
+        val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.options_menu, menu)
         return true
     }
@@ -57,47 +65,42 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         var account = GoogleSignIn.getLastSignedInAccount(this)
 
-        var signInButton = findViewById<SignInButton>(R.id.sign_in_button)
+        val signInButton = findViewById<SignInButton>(R.id.sign_in_button)
         signInButton.setSize(SignInButton.SIZE_STANDARD)
     }
 
-    private var onClick = View.OnClickListener{
-        when(it.id) {
+    private var onClick = View.OnClickListener {
+        when (it.id) {
             R.id.sign_in_button -> signIn()
         }
     }
 
     private var onClickRegisterTv = View.OnClickListener {
-        var intent = Intent(this, RegisterActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(this, RegisterActivity::class.java))
     }
 
     private var onClickBtnLogin = View.OnClickListener {
-        val username = findViewById<EditText>(R.id.et_username).text.toString().trim()
-        var password = findViewById<EditText>(R.id.et_password).text.toString().trim()
-
-        // TODO: Terminar de codificar el eventListener
+        startActivity(Intent(this, HomeActivity::class.java))
     }
 
-    private fun signIn(){
-        var signInIntent = mGoogleSignInClient?.signInIntent
+    private fun signIn() {
+        val signInIntent = mGoogleSignInClient?.signInIntent
         startActivityForResult(signInIntent, 0)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == 0){
-            var task = GoogleSignIn.getSignedInAccountFromIntent(data)
+        if (requestCode == 0) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
     }
 
-    private fun handleSignInResult(task: Task<GoogleSignInAccount>){
-        try{
+    private fun handleSignInResult(task: Task<GoogleSignInAccount>) {
+        try {
             var account = task.getResult(ApiException::class.java)
-        }
-        catch(e: ApiException){
+        } catch (e: ApiException) {
 
         }
     }

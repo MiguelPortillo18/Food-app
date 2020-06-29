@@ -6,8 +6,6 @@
     <string name="newuser_question">¿Usuario nuevo?</string>
     <string name="username_hint">Nombre de usuario</string>
     <string name="password_hint">Tu contraseña</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_text">¡Bienvenido, @User!</string>
     <string name="about">About</string>

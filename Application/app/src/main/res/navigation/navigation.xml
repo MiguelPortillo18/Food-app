@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.allmyfood.WelcomeFragment"
+        android:name="com.example.allmyfood.views.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.allmyfood.AboutFragment"
+        android:name="com.example.allmyfood.views.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/exploreFragment"
-        android:name="com.example.allmyfood.ExploreFragment"
+        android:name="com.example.allmyfood.views.ExploreFragment"
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore" >
         <action
@@ -26,22 +26,22 @@
     </fragment>
     <fragment
         android:id="@+id/myListFragment"
-        android:name="com.example.allmyfood.MylistFragment"
+        android:name="com.example.allmyfood.views.MyListFragment"
         android:label="fragment_mylist"
         tools:layout="@layout/fragment_mylist" />
     <fragment
         android:id="@+id/myRecipesFragment"
-        android:name="com.example.allmyfood.MyRecipesFragment"
+        android:name="com.example.allmyfood.views.MyRecipesFragment"
         android:label="fragment_my_recipes"
         tools:layout="@layout/fragment_my_recipes" />
     <fragment
         android:id="@+id/createRecipeFragment"
-        android:name="com.example.allmyfood.CreateRecipeFragment"
+        android:name="com.example.allmyfood.views.CreateRecipeFragment"
         android:label="fragment_create_recipe"
         tools:layout="@layout/fragment_create_recipe" />
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="com.example.allmyfood.RecipeFragment"
+        android:name="com.example.allmyfood.views.RecipeFragment"
         android:label="fragment_recipe"
         tools:layout="@layout/fragment_recipe" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectionListFragment"
-        android:name="com.example.allmyfood.SelectionListFragment"
+        android:name="com.example.allmyfood.views.SelectionListFragment"
         android:label="fragment_selection_list"
         tools:layout="@layout/fragment_selection_list" >
         <action

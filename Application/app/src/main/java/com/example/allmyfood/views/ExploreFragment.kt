@@ -1,4 +1,4 @@
-package com.example.allmyfood
+package com.example.allmyfood.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.example.allmyfood.R
 import com.example.allmyfood.databinding.FragmentExploreBinding
 
 /**
@@ -22,9 +23,14 @@ class ExploreFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_explore)
 
-       val binding = DataBindingUtil.inflate<FragmentExploreBinding>(inflater, R.layout.fragment_explore,container,false)
+        val binding = DataBindingUtil.inflate<FragmentExploreBinding>(
+            inflater,
+            R.layout.fragment_explore,
+            container,
+            false
+        )
 
-        binding.btnExtendRecipe.setOnClickListener{
+        binding.btnExtendRecipe.setOnClickListener {
             it.findNavController().navigate(R.id.action_exploreFragment_to_recipeFragment)
         }
 

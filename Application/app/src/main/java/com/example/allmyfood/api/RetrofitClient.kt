@@ -1,11 +1,11 @@
-package com.example.allmyfood
+package com.example.allmyfood.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://localhost:3500/"
+    private const val BASE_URL = "https://food-api-wrmh.herokuapp.com/"
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor{
@@ -30,3 +30,9 @@ object RetrofitClient {
         retrofit.create(API::class.java)
     }
 }
+
+// TODO: Crear fragmento de ajustes
+// TODO: Crear fragmento de bienvenida de la app
+// TODO: Terminar de implementar Google Sign In
+// TODO: Implementacion completa de la API
+// TODO: ? Seleccion de avatares

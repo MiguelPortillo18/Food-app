@@ -1,4 +1,4 @@
-package com.example.allmyfood
+package com.example.allmyfood.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.allmyfood.R
 import com.example.allmyfood.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -16,13 +17,19 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val binding =
-            DataBindingUtil.setContentView<ActivityHomeBinding>(this, R.layout.activity_home)
+            DataBindingUtil.setContentView<ActivityHomeBinding>(this,
+                R.layout.activity_home
+            )
 
         drawerLayout = binding.drawerLayout
 
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupWithNavController(binding.navView, navController)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+    }
+
+    override fun onBackPressed() {
+        finishAffinity()
     }
 
     override fun onSupportNavigateUp(): Boolean {

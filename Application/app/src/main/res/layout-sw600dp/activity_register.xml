@@ -1,169 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_tablet">
+    xmlns:tools="http://schemas.android.com/tools">
 
-        <LinearLayout
-            android:layout_width="236dp"
-            android:layout_height="222dp"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginBottom="@dimen/margin_big"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.7">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_tablet">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="204dp"
-                    android:layout_height="139dp"
-                    android:layout_marginStart="@dimen/margin_wide"
+                <LinearLayout
+                    android:layout_width="236dp"
+                    android:layout_height="222dp"
                     android:layout_marginTop="@dimen/margin_wide"
-                    android:layout_marginEnd="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_small"
-                    android:contentDescription="@string/title_Allmyfood"
-                    app:layout_constraintBottom_toTopOf="@+id/et_username"
+                    android:layout_marginBottom="@dimen/margin_big"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.51"
-                    app:srcCompat="@drawable/ic_app_logo" />
+                    app:layout_constraintVertical_bias="0.7">
 
-                <TextView
-                    style="@style/font_logo_tablet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/title_Allmyfood" />
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="204dp"
+                            android:layout_height="139dp"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_small"
+                            android:contentDescription="@string/title_Allmyfood"
+                            app:layout_constraintBottom_toTopOf="@+id/et_username"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.51"
+                            app:srcCompat="@drawable/ic_app_logo" />
 
-        </LinearLayout>
+                        <TextView
+                            style="@style/font_logo_tablet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/title_Allmyfood" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            style="@style/fillgroupStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_big"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_big"
-            android:layout_marginBottom="@dimen/margin_wide"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45999998">
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/et_regUsr"
-                    style="@style/editText_style"
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    style="@style/fillgroupStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginStart="@dimen/margin_big"
                     android:layout_marginTop="@dimen/margin_wide"
-                    android:layout_marginEnd="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_small"
-                    android:drawableStart="@drawable/ic_user_black"
-                    android:drawablePadding="@dimen/margin_small"
-                    android:hint="@string/username_hint" />
-
-                <EditText
-                    android:id="@+id/et_regFullname"
-                    style="@style/editText_style"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_wide"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:layout_marginEnd="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_small"
-                    android:drawableStart="@drawable/ic_user_black"
-                    android:drawablePadding="@dimen/margin_small"
-                    android:hint="@string/fullname_hint" />
-
-                <EditText
-                    android:id="@+id/et_regEmail"
-                    style="@style/editText_style"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_wide"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:layout_marginEnd="@dimen/margin_wide"
+                    android:layout_marginEnd="@dimen/margin_big"
                     android:layout_marginBottom="@dimen/margin_wide"
-                    android:drawableStart="@drawable/ic_mail_black"
-                    android:drawablePadding="@dimen/margin_small"
-                    android:hint="@string/email_hint" />
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.45999998">
 
-        </LinearLayout>
+                        <EditText
+                            android:id="@+id/et_regUsr"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_small"
+                            android:drawableStart="@drawable/ic_user_black"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:hint="@string/username_hint" />
 
-        <LinearLayout
-            style="@style/fillgroupStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_big"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginEnd="@dimen/margin_big"
-            android:layout_marginBottom="@dimen/margin_big"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/btn_register"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintVertical_bias="0.120000005">
+                        <EditText
+                            android:id="@+id/et_regFullname"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_small"
+                            android:drawableStart="@drawable/ic_user_black"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:hint="@string/fullname_hint" />
 
-                <EditText
-                    android:id="@+id/et_regPass"
-                    style="@style/editText_style"
+                        <EditText
+                            android:id="@+id/et_regEmail"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_wide"
+                            android:drawableStart="@drawable/ic_mail_black"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:hint="@string/email_hint" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/fillgroupStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginStart="@dimen/margin_big"
                     android:layout_marginTop="@dimen/margin_wide"
-                    android:layout_marginEnd="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_small"
-                    android:drawableStart="@drawable/ic_lock_black"
-                    android:drawablePadding="@dimen/margin_small"
-                    android:hint="@string/password_hint"
-                    android:inputType="textPassword" />
+                    android:layout_marginEnd="@dimen/margin_big"
+                    android:layout_marginBottom="@dimen/margin_big"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_register"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintVertical_bias="0.120000005">
 
-                <EditText
-                    android:id="@+id/et_regConfirm"
-                    style="@style/editText_style"
-                    android:layout_width="match_parent"
+                        <EditText
+                            android:id="@+id/et_regPass"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_small"
+                            android:drawableStart="@drawable/ic_lock_black"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:hint="@string/password_hint"
+                            android:inputType="textPassword" />
+
+                        <EditText
+                            android:id="@+id/et_regConfirm"
+                            style="@style/editText_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_wide"
+                            android:drawableStart="@drawable/ic_lock_black"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:hint="@string/hint_confirmPass"
+                            android:inputType="textPassword" />
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_register"
+                    style="@style/button_style_tablet"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_wide"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:layout_marginEnd="@dimen/margin_wide"
+                    android:layout_marginStart="@dimen/margin_bigger"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:layout_marginEnd="@dimen/margin_bigger"
                     android:layout_marginBottom="@dimen/margin_wide"
-                    android:drawableStart="@drawable/ic_lock_black"
-                    android:drawablePadding="@dimen/margin_small"
-                    android:hint="@string/hint_confirmPass"
-                    android:inputType="textPassword" />
-
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_register"
-            style="@style/button_style_tablet"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_bigger"
-            android:layout_marginTop="@dimen/margin_big"
-            android:layout_marginEnd="@dimen/margin_bigger"
-            android:layout_marginBottom="@dimen/margin_wide"
-            android:paddingLeft="@dimen/margin_wide"
-            android:paddingRight="@dimen/margin_wide"
-            android:text="@string/btn_reg_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.85" />
+                    android:paddingLeft="@dimen/margin_wide"
+                    android:paddingRight="@dimen/margin_wide"
+                    android:text="@string/btn_reg_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.85" />
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
