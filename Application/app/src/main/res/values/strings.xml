@@ -71,4 +71,7 @@
     <string name="item_mylist_text_four">Ketchup</string>
     <string name="item_mylist_text_five">Lechuga</string>
     <string name="item_mylist_text_six">Servilletas</string>
+    <string name="k_username">ph</string>
+    <string name="k_fullname">ph</string>
+    <string name="k_timestamp">ph</string>
 </resources>

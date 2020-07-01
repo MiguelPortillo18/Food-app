@@ -1,5 +1,6 @@
 package com.example.allmyfood.views
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -25,6 +26,8 @@ import com.google.android.gms.tasks.Task
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.*
+import java.sql.Timestamp
 
 class MainActivity : AppCompatActivity() {
 
@@ -126,9 +129,27 @@ class MainActivity : AppCompatActivity() {
                 CurrentUser.onLoginSuccessful(response.body()!!.username,
                     response.body()!!.fullname)
 
+                writeSharedPreferences()
                 startActivity(Intent(this@MainActivity, HomeActivity::class.java))
             }
         })
+    }
+
+    private fun writeSharedPreferences(){
+        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
+
+        with (sharedPref.edit()) {
+            putString(getString(R.string.k_username), CurrentUser.username)
+            putString(getString(R.string.k_fullname), CurrentUser.fullname)
+            putString(getString(R.string.k_timestamp), CurrentUser.loginTimeStamp.toString())
+            commit()
+        }
+    }
+
+    private fun readSharedPreferences(){
+        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
+
+        val ts = Timestamp.valueOf(getString(R.string.k_timestamp))
     }
 
     private fun signIn() {
