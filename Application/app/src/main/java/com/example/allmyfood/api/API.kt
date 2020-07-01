@@ -1,11 +1,9 @@
 package com.example.allmyfood.api
 
 import com.example.allmyfood.models.DefaultResponse
+import com.example.allmyfood.models.LoginResponse
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface API {
     @FormUrlEncoded
@@ -16,4 +14,10 @@ interface API {
         @Field("password") password:String,
         @Field("email") email:String
     ): Call<DefaultResponse>
+
+    @GET("user")
+    fun loginUser(
+        @Query("username") username: String,
+        @Query("password") password: String
+    ): Call<LoginResponse>
 }

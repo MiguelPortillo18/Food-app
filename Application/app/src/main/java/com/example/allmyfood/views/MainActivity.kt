@@ -6,13 +6,15 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.allmyfood.R
+import com.example.allmyfood.api.RetrofitClient
 import com.example.allmyfood.databinding.ActivityMainBinding
+import com.example.allmyfood.models.CurrentUser
+import com.example.allmyfood.models.LoginResponse
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -20,6 +22,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,7 +47,9 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             signInButton.setOnClickListener(onClick)
             tvRegister.setOnClickListener(onClickRegisterTv)
-            btnLogin.setOnClickListener(onClickBtnLogin)
+            btnLogin.setOnClickListener {
+                onClickBtnLogin(binding.etUsername, binding.etPassword)
+            }
         }
     }
 
@@ -79,8 +86,49 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, RegisterActivity::class.java))
     }
 
-    private var onClickBtnLogin = View.OnClickListener {
-        startActivity(Intent(this, HomeActivity::class.java))
+    private fun onClickBtnLogin(username: EditText, password: EditText) {
+        if (username.text.isEmpty()) {
+            Toast.makeText(
+                applicationContext,
+                "No puedes dejar campos vacios . . .",
+                Toast.LENGTH_LONG
+            ).show()
+
+            username.requestFocus()
+            return
+        }
+
+        if (password.text.isEmpty()) {
+            Toast.makeText(
+                applicationContext,
+                "No puedes dejar campos vacios . . .",
+                Toast.LENGTH_LONG
+            ).show()
+
+            password.requestFocus()
+            return
+        }
+
+        RetrofitClient.instance.loginUser(
+            username.text.toString(),
+            password.text.toString()
+        ).enqueue(object : Callback<LoginResponse>{
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                Toast.makeText(applicationContext,
+                    "Algo salió mal . . .", Toast.LENGTH_LONG).show()
+            }
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                if(response.body()?.error!!){
+                    Toast.makeText(applicationContext,
+                        "Algo salió mal . . .", Toast.LENGTH_LONG).show()
+                    return
+                }
+                CurrentUser.onLoginSuccessful(response.body()!!.username,
+                    response.body()!!.fullname)
+
+                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+            }
+        })
     }
 
     private fun signIn() {

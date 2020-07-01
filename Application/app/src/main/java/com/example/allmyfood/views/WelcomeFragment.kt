@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.allmyfood.R
 import com.example.allmyfood.databinding.FragmentWelcomeBinding
+import com.example.allmyfood.models.CurrentUser
 
 /**
  * A simple [Fragment] subclass.
@@ -29,6 +30,7 @@ class WelcomeFragment : Fragment() {
             false
         )
 
+        binding.textView.text = "¡Bienvenido, ${CurrentUser.username}!"
         setHasOptionsMenu(true)
 
         return binding.root

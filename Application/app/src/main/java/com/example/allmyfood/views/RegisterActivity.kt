@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.allmyfood.R
 import com.example.allmyfood.api.RetrofitClient
 import com.example.allmyfood.databinding.ActivityRegisterBinding
+import com.example.allmyfood.models.CurrentUser
 import com.example.allmyfood.models.DefaultResponse
 import kotlinx.android.synthetic.main.activity_register.view.*
 import retrofit2.Call
@@ -30,58 +31,68 @@ class RegisterActivity : AppCompatActivity() {
         )
 
         binding.btnRegister.setOnClickListener {
-            onRegisterClick(binding)
+            onRegisterClick(
+                binding.etRegUsr,
+                binding.etRegFullname, binding.etRegPass, binding.etRegConfirm, binding.etRegEmail
+            )
         }
     }
 
-    private fun onRegisterClick(binding: ActivityRegisterBinding) {
-
-        if (binding.etRegUsr.text.isEmpty()) {
-            binding.etRegUsr.requestFocus()
-            Toast.makeText(applicationContext,
+    private fun onRegisterClick(
+        username: EditText, fullname: EditText,
+        password: EditText, confirmPass: EditText, email: EditText
+    ) {
+        if (username.text.isEmpty()) {
+            username.requestFocus()
+            Toast.makeText(
+                applicationContext,
                 "Te faltan campos por completar",
                 Toast.LENGTH_LONG
             ).show()
             return
         }
 
-        if (binding.etRegFullname.text.isEmpty()) {
-            binding.etRegFullname.requestFocus()
-            Toast.makeText(applicationContext,
+        if (fullname.text.isEmpty()) {
+            fullname.requestFocus()
+            Toast.makeText(
+                applicationContext,
                 "Te faltan campos por completar",
                 Toast.LENGTH_LONG
             ).show()
             return
         }
 
-        if (binding.etRegPass.text.isEmpty()) {
-            binding.etRegPass.requestFocus()
-            Toast.makeText(applicationContext,
+        if (password.text.isEmpty()) {
+            password.requestFocus()
+            Toast.makeText(
+                applicationContext,
                 "Te faltan campos por completar",
                 Toast.LENGTH_LONG
             ).show()
             return
         }
 
-        if (binding.etRegConfirm.text.isEmpty()) {
-            binding.etRegConfirm.requestFocus()
-            Toast.makeText(applicationContext,
+        if (confirmPass.text.isEmpty()) {
+            confirmPass.requestFocus()
+            Toast.makeText(
+                applicationContext,
                 "Te faltan campos por completar",
                 Toast.LENGTH_LONG
             ).show()
             return
         }
 
-        if (binding.etRegEmail.text.isEmpty()) {
-            binding.etRegEmail.requestFocus()
-            Toast.makeText(applicationContext,
+        if (email.text.isEmpty()) {
+            email.requestFocus()
+            Toast.makeText(
+                applicationContext,
                 "Te faltan campos por completar",
                 Toast.LENGTH_LONG
             ).show()
             return
         }
 
-        if(binding.etRegConfirm.text.toString() != binding.etRegPass.text.toString()) {
+        if (password.text.toString() != confirmPass.text.toString()) {
             Toast.makeText(
                 applicationContext,
                 "Las contraseñas no coinciden :(",
@@ -91,24 +102,23 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         RetrofitClient.instance.createUser(
-            binding.etRegUsr.text.toString(),
-            binding.etRegFullname.text.toString(),
-            binding.etRegPass.text.toString(),
-            binding.etRegEmail.text.toString()
+            username.text.toString(),
+            fullname.text.toString(),
+            password.text.toString(),
+            email.text.toString()
         ).enqueue(object : Callback<DefaultResponse> {
             override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                Toast.makeText(applicationContext,
-                    "Algo salió mal . . .", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    applicationContext,
+                    "Algo salió mal . . .", Toast.LENGTH_LONG
+                ).show()
             }
 
             override fun onResponse(
                 call: Call<DefaultResponse>,
                 response: Response<DefaultResponse>
             ) {
-                Toast.makeText(
-                    applicationContext, "Bienvenido ${binding.etRegUsr.text.toString()}",
-                    Toast.LENGTH_LONG
-                ).show()
+                CurrentUser.onLoginSuccessful(username.text.toString(), fullname.text.toString())
 
                 startActivity(
                     Intent(
