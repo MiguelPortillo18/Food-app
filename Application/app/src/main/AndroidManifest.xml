@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.allmyfood">
+    package="com.wrmh.allmyfood">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/ic_app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.MainActivity"
+        <activity android:name="com.wrmh.allmyfood.views.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.RegisterActivity"
+        <activity android:name="com.wrmh.allmyfood.views.RegisterActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.OPENABLE" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.HomeActivity">
+        <activity android:name="com.wrmh.allmyfood.views.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

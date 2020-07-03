@@ -1,17 +1,17 @@
-package com.example.allmyfood.models
+package com.wrmh.allmyfood.models
 
-import java.io.File
-import java.time.Instant
 import java.util.*
 
 object CurrentUser {
     var username: String? = null
     var fullname: String? = null
+    var userImage: String? = null
     var loginTimeStamp: Date? = null
 
-    fun onLoginSuccessful(username: String, fullname: String) {
+    fun onLoginSuccessful(username: String, fullname: String, userImage: String) {
         this.username = username
         this.fullname = fullname
+        this.userImage = userImage
 
         loginTimeStamp = Calendar.getInstance().time
     }

@@ -74,4 +74,6 @@
     <string name="k_username">ph</string>
     <string name="k_fullname">ph</string>
     <string name="k_timestamp">ph</string>
+    <string name="placeholder">placeholder</string>
+    <string name="error">Algo salió mal, intenta nuevamente . . .</string>
 </resources>
