@@ -1,5 +1,6 @@
 package com.wrmh.allmyfood.views
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -15,6 +16,7 @@ import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.api.API
 import com.wrmh.allmyfood.databinding.ActivityRegisterBinding
 import com.wrmh.allmyfood.models.CurrentUser
+import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,8 +24,7 @@ import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
-    //private lateinit var imageView : ImageView
-    //private lateinit var uriImage: Uri
+    private lateinit var imageView : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         title = getString(R.string.title_register)
@@ -42,29 +43,30 @@ class RegisterActivity : AppCompatActivity() {
             )
         }
 
-        //Agregar foto
-//        imageView = findViewById<View>(R.id.imv_id) as ImageView
-//
-//        imageView.setOnClickListener{
-//            fun onClick(v: View?) {
-//                openGallery()
-//            }
-//        }
-//    }
-//
-//    private fun openGallery(){
-//        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-//        startActivityForResult(intent,100);
-//    }
-//
-//    fun onActivityResult(requestCode : Int, resultCode : Int, intent){
-//        if(resultCode == RESULT_OK && requestCode == 100){
-//            uriImage
-//            imageView.setImageURI(uriImage)
-//        }
-   }
+        imageView = binding.imageView
 
-      fun onRegisterClick(
+    }
+
+    fun onClick(view: View) {
+        loadImage()
+    }
+
+    fun loadImage(){
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        intent.type = "image/*"
+        startActivityForResult(intent, 10)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(resultCode == Activity.RESULT_OK){
+            val path : Uri? = data?.getData()
+            imageView.setImageURI(path)
+        }
+    }
+
+    private fun onRegisterClick(
         username: EditText, fullname: EditText,
         password: EditText, confirmPass: EditText, email: EditText
     ) {
@@ -143,4 +145,5 @@ class RegisterActivity : AppCompatActivity() {
             )
         }
     }
+
 }
