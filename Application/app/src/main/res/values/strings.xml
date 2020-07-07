@@ -81,5 +81,7 @@
     <string name="return_text">Regresar</string>
     <string name="list_name">Nombre</string>
     <string name="list_add">Agrega un elemento</string>
-    <string name="add_photo_text">Agrega una foto</string>
+    <string name="add_photo_text"> <u>Agrega tu foto de perfil</u></string>
+    <string name="profileImage_desc">profileImage</string>
+    <string name="tv_add_recipe_image"><u>Agrega imagen de tu receta</u></string>
 </resources>

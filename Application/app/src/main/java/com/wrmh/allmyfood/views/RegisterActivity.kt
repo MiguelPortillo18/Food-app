@@ -62,7 +62,7 @@ class RegisterActivity : AppCompatActivity() {
 
         if(resultCode == Activity.RESULT_OK){
             val path : Uri? = data?.getData()
-            imageView.setImageURI(path)
+            imageViewProfile.setImageURI(path)
         }
     }
 

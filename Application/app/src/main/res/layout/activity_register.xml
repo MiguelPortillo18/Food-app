@@ -75,7 +75,9 @@
                             android:layout_marginBottom="@dimen/margin_small"
                             android:drawableStart="@drawable/ic_user_black"
                             android:drawablePadding="@dimen/margin_small"
-                            android:hint="@string/username_hint" />
+                            android:hint="@string/username_hint"
+                            android:inputType="text"
+                            android:autofillHints="" />
 
                         <EditText
                             android:id="@+id/et_regFullname"
@@ -88,7 +90,9 @@
                             android:layout_marginBottom="@dimen/margin_small"
                             android:drawableStart="@drawable/ic_user_black"
                             android:drawablePadding="@dimen/margin_small"
-                            android:hint="@string/fullname_hint" />
+                            android:hint="@string/fullname_hint"
+                            android:inputType="text"
+                            android:autofillHints=""/>
 
                         <EditText
                             android:id="@+id/et_regEmail"
@@ -101,7 +105,9 @@
                             android:layout_marginBottom="@dimen/margin_wide"
                             android:drawableStart="@drawable/ic_mail_black"
                             android:drawablePadding="@dimen/margin_small"
-                            android:hint="@string/email_hint" />
+                            android:hint="@string/email_hint"
+                            android:inputType="textEmailAddress"
+                            android:autofillHints="" />
 
                 </LinearLayout>
 
@@ -133,7 +139,8 @@
                             android:drawableStart="@drawable/ic_lock_black"
                             android:drawablePadding="@dimen/margin_small"
                             android:hint="@string/password_hint"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            android:importantForAutofill="no" />
 
                         <EditText
                             android:id="@+id/et_regConfirm"
@@ -147,7 +154,8 @@
                             android:drawableStart="@drawable/ic_lock_black"
                             android:drawablePadding="@dimen/margin_small"
                             android:hint="@string/hint_confirmPass"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            android:autofillHints="" />
 
 
                 </LinearLayout>
@@ -173,7 +181,7 @@
                 <TextView
                     android:id="@+id/tv_add_image"
                     style="@style/font_small_style"
-                    android:layout_width="135dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="22dp"
                     android:layout_marginStart="@dimen/margin_wide"
                     android:layout_marginEnd="@dimen/margin_wide"
@@ -185,11 +193,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.52"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imv_id"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewProfile"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
-                    android:id="@+id/imv_id"
+                    android:id="@+id/imageViewProfile"
                     android:layout_width="99dp"
                     android:layout_height="74dp"
                     android:layout_marginStart="@dimen/margin_wide"
@@ -200,7 +208,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.0"
+                    android:contentDescription="@string/profileImage_desc" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
