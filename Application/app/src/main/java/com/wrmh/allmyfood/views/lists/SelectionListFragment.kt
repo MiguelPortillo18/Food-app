@@ -1,4 +1,4 @@
-package com.wrmh.allmyfood.views
+package com.wrmh.allmyfood.views.lists
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,11 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrmh.allmyfood.R
+import com.wrmh.allmyfood.adapters.ListRecyclerAdapter
+import com.wrmh.allmyfood.adapters.RecipeRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentSelectionListBinding
 
 /**
@@ -16,6 +20,9 @@ import com.wrmh.allmyfood.databinding.FragmentSelectionListBinding
  * create an Instance of this fragment.
  */
 class SelectionListFragment : Fragment() {
+    private lateinit var listAdapter: ListRecyclerAdapter
+    private lateinit var viewModel: SelectionListViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +38,21 @@ class SelectionListFragment : Fragment() {
             false
         )
 
+        viewModel = ViewModelProvider(this).get(SelectionListViewModel::class.java)
+        listAdapter = ListRecyclerAdapter()
+
+        viewModel.callback = {
+            listAdapter = ListRecyclerAdapter()
+
+            binding.recyclerViewLs.apply {
+                layoutManager = LinearLayoutManager(container?.context)
+                adapter = listAdapter
+            }
+
+            viewModel.response.value?.let { listAdapter.submitList(it) }
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_selection_list, container, false)
+        return binding.root
     }
 }

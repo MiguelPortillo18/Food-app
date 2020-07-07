@@ -1,6 +1,7 @@
 package com.wrmh.allmyfood.api
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.wrmh.allmyfood.responses.ListResponse
 import com.wrmh.allmyfood.responses.LoginResponse
 import com.wrmh.allmyfood.responses.RecipeResponse
 import com.wrmh.allmyfood.responses.RegisterResponse
@@ -11,6 +12,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
+import java.util.concurrent.TimeUnit
 
 const val BASE_URL = "https://food-api-wrmh.herokuapp.com/"
 
@@ -38,6 +40,11 @@ interface API {
     @GET("recipe")
     fun exploreRecipesAsync(): Deferred<RecipeResponse>
 
+    @GET("list")
+    fun getUserLists(
+        @Query("username") username: String
+    ): Deferred<ListResponse>
+
     companion object {
         operator fun invoke(): API {
             val requestInterceptor = Interceptor {
@@ -55,6 +62,9 @@ interface API {
             }
 
             val okHttpClient = OkHttpClient.Builder()
+                .connectTimeout(90, TimeUnit.SECONDS)
+                .readTimeout(90, TimeUnit.SECONDS)
+                .writeTimeout(90, TimeUnit.SECONDS)
                 .addInterceptor(requestInterceptor)
                 .build()
 

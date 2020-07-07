@@ -1,4 +1,4 @@
-package com.wrmh.allmyfood.views
+package com.wrmh.allmyfood.views.lists
 
 import android.os.Bundle
 import android.view.LayoutInflater

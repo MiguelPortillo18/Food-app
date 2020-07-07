@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".views.MyListFragment">
+    tools:context=".views.lists.MyListFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,12 +26,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <EditText
                         style="@style/font_style_grey_bold_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/margin_wide"
-                        android:text="Mi lista de compras" />
+                        android:layout_margin="@dimen/margin_wide"
+                        android:hint="@string/list_name"
+                        android:importantForAutofill="no"
+                        android:inputType="text" />
 
                     <TextView
                         style="@style/font_style_grey_bold"
@@ -42,59 +45,12 @@
                         android:paddingEnd="30dp"
                         android:text="@string/itemList" />
 
-                    <CheckBox
-                        style="@style/checkBox_style"
+                    <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:text="@string/item_mylist_text_one" />
-
-                    <CheckBox
-                        style="@style/checkBox_style"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:text="@string/item_mylist_text_two" />
-
-                    <CheckBox
-                        style="@style/checkBox_style"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:text="@string/item_mylist_text_three" />
-
-                    <CheckBox
-                        style="@style/checkBox_style"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:text="@string/item_mylist_text_four" />
-
-                    <CheckBox
-                        style="@style/checkBox_style"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:text="@string/item_mylist_text_five" />
-
-                    <CheckBox
-                        style="@style/checkBox_style"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:text="@string/item_mylist_text_six" />
+                        tools:listitem="@layout/editable_list_item"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listCount="5"/>
 
                     <ImageView
                         android:layout_width="50dp"

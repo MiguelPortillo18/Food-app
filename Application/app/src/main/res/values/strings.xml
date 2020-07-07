@@ -77,4 +77,8 @@
     <string name="placeholder">placeholder</string>
     <string name="error">Algo salió mal, intenta nuevamente . . .</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="create_list">Nueva lista</string>
+    <string name="return_text">Regresar</string>
+    <string name="list_name">Nombre</string>
+    <string name="list_add">Agrega un elemento</string>
 </resources>

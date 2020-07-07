@@ -48,7 +48,7 @@ class RecipeRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             recipeTitle.text = recipe.title
 
             if(recipe.desc.length > 150)
-                recipeDesc.text = recipe.desc.substring(150) + ". . ."
+                recipeDesc.text = recipe.desc.substring(150) + "..."
             else
                 recipeDesc.text = recipe.desc
 

@@ -1,7 +1,10 @@
 package com.wrmh.allmyfood.views
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -30,7 +33,23 @@ class WelcomeFragment : Fragment() {
             false
         )
 
-        binding.textView.text = "¡Bienvenido, ${CurrentUser.username}!"
+        val sharedPref = activity?.getSharedPreferences("USER_LOG", Context.MODE_PRIVATE)
+
+        binding.apply {
+            textView.text = "¡Bienvenido, ${CurrentUser.username}!"
+            onLoggingOut?.setOnClickListener{
+
+                val editor = sharedPref?.edit()
+                editor?.clear()
+                editor?.commit()
+
+                Toast.makeText(this@WelcomeFragment.context, "¡Vuelve pronto!",
+                    Toast.LENGTH_LONG).show()
+
+                this@WelcomeFragment.activity?.finishAffinity()
+            }
+        }
+
         Picasso.get().load(CurrentUser.userImage).into(binding.imvTitle)
         setHasOptionsMenu(true)
 

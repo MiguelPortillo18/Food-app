@@ -29,23 +29,6 @@ class HomeActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupWithNavController(binding.navView, navController)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            if(destination.id == R.id.onLoggingOut){
-                val sharedPref = getPreferences(Context.MODE_PRIVATE)
-
-                with(sharedPref.edit()){
-                    remove(getString(R.string.k_username))
-                    remove(getString(R.string.k_fullname))
-                    remove(getString(R.string.k_userImage))
-                    commit()
-                }
-
-                Toast.makeText(applicationContext, "¡Vuelve pronto!", Toast.LENGTH_LONG).show()
-
-                finishAffinity()
-            }
-        }
     }
 
     override fun onBackPressed() {

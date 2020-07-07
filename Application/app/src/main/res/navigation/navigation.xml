@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/myListFragment"
-        android:name="com.wrmh.allmyfood.views.MyListFragment"
+        android:name="com.wrmh.allmyfood.views.lists.MyListFragment"
         android:label="fragment_mylist"
         tools:layout="@layout/fragment_mylist" />
     <fragment
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectionListFragment"
-        android:name="com.wrmh.allmyfood.views.SelectionListFragment"
+        android:name="com.wrmh.allmyfood.views.lists.SelectionListFragment"
         android:label="fragment_selection_list"
         tools:layout="@layout/fragment_selection_list" >
         <action

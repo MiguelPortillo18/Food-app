@@ -20,7 +20,11 @@
         android:icon="@drawable/ic_list_black"
         android:title="@string/selection_list_text" />
     <item
-        android:id="@+id/onLoggingOut"
+        android:id="@+id/myListFragment"
+        android:icon="@drawable/ic_add_circle_black"
+        android:title="@string/create_list" />
+    <item
+        android:id="@+id/welcomeFragment"
         android:icon="@drawable/ic_clear_black"
-        android:title="@string/logout" />
+        android:title="@string/return_text" />
 </menu>

@@ -59,23 +59,23 @@ class MainActivity : AppCompatActivity() {
         viewModel.callback = {
             val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
 
-            with(sharedPref.edit()){
+            with(sharedPref.edit()) {
                 putString(getString(R.string.k_username), CurrentUser.username)
                 putString(getString(R.string.k_fullname), CurrentUser.fullname)
                 putString(getString(R.string.k_userImage), CurrentUser.userImage)
-                commit()
+                apply()
             }
 
             startActivity(Intent(this, HomeActivity::class.java))
         }
 
-        val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
+        val sharedPref = this.getSharedPreferences("USER_LOG", Context.MODE_PRIVATE) ?: return
 
         val lastLoggedUsername = sharedPref.getString(getString(R.string.k_username), "")
         val lastLoggedUserFullname = sharedPref.getString(getString(R.string.k_fullname), "")
         val lastLoggedUserImage = sharedPref.getString(getString(R.string.k_userImage), "")
 
-        if(lastLoggedUsername!!.isEmpty())
+        if (lastLoggedUsername!!.isEmpty())
             return
 
         CurrentUser.onLoginSuccessful(
@@ -176,3 +176,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+/*
+TODO: Crear lista
+
+TODO: Migue: Agregar items a la lista -> Crear elemento, agregar boton de menos para eliminar elemento y agregar boton para enviar a la API
+
+TODO: Migue: Crear receta -> Editar titulo, desc, ingredientes y pasos igual a items de la lista
+
+TODO: Google Sign In
+TODO: Migue: Elegir fotos
+
+TODO: Ver receta completa
+TODO: Ver lista completa
+ */

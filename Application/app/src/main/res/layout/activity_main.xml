@@ -112,38 +112,40 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_login"
             app:layout_constraintVertical_bias="0.25" />
 
-        <TextView
-            android:id="@+id/tv_newusr_question"
-            style="@style/font_style_grey"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:layout_marginTop="@dimen/margin_wide"
-            android:layout_marginBottom="@dimen/margin_wide"
-            android:clickable="false"
-            android:focusable="false"
-            android:text="@string/newuser_question"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_forgotpass"
-            app:layout_constraintVertical_bias="0.35000002" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_forgotpass">
 
-        <TextView
-            android:id="@+id/tv_register"
-            style="@style/font_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/register_text"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tv_newusr_question"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintStart_toEndOf="@+id/tv_newusr_question" />
+            <TextView
+                android:id="@+id/tv_newusr_question"
+                style="@style/font_style_grey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginBottom="@dimen/margin_wide"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="@string/newuser_question" />
+
+            <TextView
+                android:id="@+id/tv_register"
+                style="@style/font_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/register_text" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"

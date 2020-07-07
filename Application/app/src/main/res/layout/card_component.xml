@@ -55,7 +55,7 @@
                 android:layout_height="130dp"
                 android:contentDescription="@string/placeholder"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/pupusas"/>
+                app:srcCompat="@drawable/image_ph"/>
 
             <TextView
                 android:id="@+id/recipe_desc"
