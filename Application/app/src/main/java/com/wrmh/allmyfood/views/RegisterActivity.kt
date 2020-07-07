@@ -22,8 +22,8 @@ import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var imageView : ImageView
-    private lateinit var uriImage: Uri
+    //private lateinit var imageView : ImageView
+    //private lateinit var uriImage: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         title = getString(R.string.title_register)
@@ -43,29 +43,28 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         //Agregar foto
-        imageView = findViewById<View>(R.id.imv_id) as ImageView
+//        imageView = findViewById<View>(R.id.imv_id) as ImageView
+//
+//        imageView.setOnClickListener{
+//            fun onClick(v: View?) {
+//                openGallery()
+//            }
+//        }
+//    }
+//
+//    private fun openGallery(){
+//        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+//        startActivityForResult(intent,100);
+//    }
+//
+//    fun onActivityResult(requestCode : Int, resultCode : Int, intent){
+//        if(resultCode == RESULT_OK && requestCode == 100){
+//            uriImage
+//            imageView.setImageURI(uriImage)
+//        }
+   }
 
-        imageView.setOnClickListener{
-            fun onClick(v: View?) {
-                openGallery()
-            }
-        }
-    }
-
-    private fun openGallery(){
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(intent,100);
-    }
-
-    fun onActivityResult(requestCode : Int, resultCode : Int, intent){
-        if(resultCode == RESULT_OK && requestCode == 100){
-            uriImage
-            imageView.setImageURI(uriImage)
-        }
-    }
-    //Hasta aca
-
-    private fun onRegisterClick(
+      fun onRegisterClick(
         username: EditText, fullname: EditText,
         password: EditText, confirmPass: EditText, email: EditText
     ) {
