@@ -7,16 +7,14 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.adapters.RecipeRecyclerAdapter
-import com.wrmh.allmyfood.api.API
 import com.wrmh.allmyfood.databinding.FragmentExploreBinding
+import com.wrmh.allmyfood.models.RecipeModel
 import kotlinx.android.synthetic.main.fragment_explore.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 /**
  * A simple [Fragment] subclass.
@@ -40,19 +38,19 @@ class ExploreFragment : Fragment() {
         )
 
         viewModel = ViewModelProvider(this).get(ExploreViewModel::class.java)
-
         recipeAdapter = RecipeRecyclerAdapter()
 
-        initRecyclerView(container)
-        recipeAdapter.submitList(viewModel.response.value!!)
+        viewModel.callbackFunction = {
+            recipeAdapter = RecipeRecyclerAdapter()
+
+            binding.recyclerViewEx.apply {
+                layoutManager = LinearLayoutManager(container?.context)
+                adapter = recipeAdapter
+            }
+
+            viewModel.response.value?.let { recipeAdapter.submitList(it) }
+        }
 
         return binding.root
-    }
-
-    private fun initRecyclerView(container: ViewGroup?) {
-        recycler_view_ex?.apply {
-            layoutManager = LinearLayoutManager(container?.context)
-            adapter = recipeAdapter
-        }
     }
 }

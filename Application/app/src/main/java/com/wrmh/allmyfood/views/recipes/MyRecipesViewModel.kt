@@ -4,13 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wrmh.allmyfood.api.API
+import com.wrmh.allmyfood.models.CurrentUser
 import com.wrmh.allmyfood.models.RecipeModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class ExploreViewModel : ViewModel() {
+class MyRecipesViewModel : ViewModel() {
     private val viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
     private var recipes = MutableLiveData<List<RecipeModel>>()
@@ -21,19 +22,20 @@ class ExploreViewModel : ViewModel() {
         get() = recipes
 
     init {
-        getAllRecipes()
+        getAllUserRecipes()
     }
 
-    private fun getAllRecipes() {
+    private fun getAllUserRecipes() {
         coroutineScope.launch {
-            val getRecipesDeferred = API().exploreRecipesAsync()
+            val getUserRecipesDeferred = API().userRecipesAsync(CurrentUser.username!!)
 
             try {
-                val apiResponse = getRecipesDeferred.await()
+                val apiResponse = getUserRecipesDeferred.await()
                 recipes.value = apiResponse.recipes
 
-                if (apiResponse.recipes.isEmpty())
+                if(apiResponse.recipes.isEmpty())
                     throw java.lang.Exception()
+
             } catch (e: Exception) {
                 recipes.value = arrayListOf(
                     RecipeModel(
@@ -47,7 +49,8 @@ class ExploreViewModel : ViewModel() {
                         "INF"
                     )
                 )
-            } finally {
+            }
+            finally {
                 callbackFunction()
             }
         }

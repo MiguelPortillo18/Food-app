@@ -46,9 +46,14 @@ class RecipeRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         fun bind(recipe: RecipeModel) {
             recipeTitle.text = recipe.title
-            recipeDesc.text = recipe.desc
 
-            Picasso.get().load(recipe.recipeImage).into(recipeImage)
+            if(recipe.desc.length > 150)
+                recipeDesc.text = recipe.desc.substring(150) + ". . ."
+            else
+                recipeDesc.text = recipe.desc
+
+            if(recipe.recipeImage != "INF")
+                Picasso.get().load(recipe.recipeImage).into(recipeImage)
         }
     }
 }

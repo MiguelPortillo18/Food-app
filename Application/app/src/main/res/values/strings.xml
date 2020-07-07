@@ -34,7 +34,7 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">"Welcome!"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
@@ -42,10 +42,10 @@
     <string name="string_ingredients">Ingredientes:</string>
     <string name="text_preparacion">Preparación:</string>
     <string name="itemList">Items</string>
-    <string name="card_text_title_one">Pupusas de chicharrón</string>
-    <string name="text_desc_card_one">Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos, no solo en El Salvador...</string>
+    <string name="lorem">Lorem</string>
+    <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non orci pellentesque, aliquam risus nec, feugiat quam. Nullam faucibus non ante at tempor.</string>
     <string name="text_title_card_two">Tacos al Pastor</string>
-    <string name="text_desc_card_two">Receta práctica para preparar unos deliciosos Tacos al Pastor, el platillo favorito de la gastronomía mexicana traído hasta nuestro país...</string>
+    <string name="text_desc_card_two">Receta práctica para preparar unos deliciosos Tacos al Pastor, el platillo favorito de la gastronomía mexicana traído hasta nuestro país…</string>
     <string name="card_desc_complete">Receta práctica de como preparar unas deliciosas pupusas de chicharrón. Este platillo salvadoreño es el favorito de muchos no solo en El Salvador sino en muchos paises latinos.</string>
     <string name="check_text_one">Engrasar la plancha</string>
     <string name="chekck_text_two">Preparar la masa</string>
@@ -71,9 +71,10 @@
     <string name="item_mylist_text_four">Ketchup</string>
     <string name="item_mylist_text_five">Lechuga</string>
     <string name="item_mylist_text_six">Servilletas</string>
-    <string name="k_username">ph</string>
-    <string name="k_fullname">ph</string>
-    <string name="k_timestamp">ph</string>
+    <string name="k_username">username</string>
+    <string name="k_fullname">fullname</string>
+    <string name="k_userImage">userImage</string>
     <string name="placeholder">placeholder</string>
     <string name="error">Algo salió mal, intenta nuevamente . . .</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>

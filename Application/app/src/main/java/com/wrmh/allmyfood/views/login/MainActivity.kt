@@ -1,4 +1,4 @@
-package com.wrmh.allmyfood.views
+package com.wrmh.allmyfood.views.login
 
 import android.content.Context
 import android.content.Intent
@@ -8,9 +8,11 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -19,17 +21,16 @@ import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.wrmh.allmyfood.R
-import com.wrmh.allmyfood.api.API
 import com.wrmh.allmyfood.databinding.ActivityMainBinding
 import com.wrmh.allmyfood.models.CurrentUser
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.sql.Timestamp
+import com.wrmh.allmyfood.views.HomeActivity
+import com.wrmh.allmyfood.views.RegisterActivity
 
 class MainActivity : AppCompatActivity() {
 
     private var mGoogleSignInClient: GoogleSignInClient? = null
+    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var spinner: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +52,39 @@ class MainActivity : AppCompatActivity() {
             btnLogin.setOnClickListener {
                 onClickBtnLogin(binding.etUsername, binding.etPassword)
             }
+            spinner = progressBar1!!
         }
+
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        viewModel.callback = {
+            val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
+
+            with(sharedPref.edit()){
+                putString(getString(R.string.k_username), CurrentUser.username)
+                putString(getString(R.string.k_fullname), CurrentUser.fullname)
+                putString(getString(R.string.k_userImage), CurrentUser.userImage)
+                commit()
+            }
+
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
+
+        val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
+
+        val lastLoggedUsername = sharedPref.getString(getString(R.string.k_username), "")
+        val lastLoggedUserFullname = sharedPref.getString(getString(R.string.k_fullname), "")
+        val lastLoggedUserImage = sharedPref.getString(getString(R.string.k_userImage), "")
+
+        if(lastLoggedUsername!!.isEmpty())
+            return
+
+        CurrentUser.onLoginSuccessful(
+            lastLoggedUsername,
+            lastLoggedUserFullname!!,
+            lastLoggedUserImage!!
+        )
+
+        startActivity(Intent(this, HomeActivity::class.java))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -110,33 +143,15 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        CoroutineScope(Dispatchers.Main).launch {
-            val apiService = API()
+        val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
 
-            val response =
-                apiService.loginUserAsync(username.text.toString(), password.text.toString()).await()
-
-            CurrentUser.onLoginSuccessful(response.username, response.fullname, response.userImage)
-
-            startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-        }
-    }
-
-    private fun writeSharedPreferences() {
-        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
-
-        with(sharedPref.edit()) {
-            putString(getString(R.string.k_username), CurrentUser.username)
-            putString(getString(R.string.k_fullname), CurrentUser.fullname)
-            putString(getString(R.string.k_timestamp), CurrentUser.loginTimeStamp.toString())
-            commit()
-        }
-    }
-
-    private fun readSharedPreferences() {
-        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
-
-        val ts = Timestamp.valueOf(getString(R.string.k_timestamp))
+        viewModel.loginUser(
+            username.text.toString(),
+            password.text.toString(),
+            this,
+            spinner,
+            sharedPref
+        )
     }
 
     private fun signIn() {

@@ -7,13 +7,21 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrmh.allmyfood.R
+import com.wrmh.allmyfood.adapters.RecipeRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentMyRecipesBinding
+import kotlinx.android.synthetic.main.fragment_explore.*
+import kotlinx.android.synthetic.main.fragment_my_recipes.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class MyRecipesFragment : Fragment() {
+    private lateinit var recipeAdapter: RecipeRecyclerAdapter
+    private lateinit var viewModel: MyRecipesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,8 +38,21 @@ class MyRecipesFragment : Fragment() {
             false
         )
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_recipes, container, false)
-    }
+        viewModel = ViewModelProvider(this).get(MyRecipesViewModel::class.java)
+        recipeAdapter = RecipeRecyclerAdapter()
 
+        viewModel.callbackFunction = {
+            recipeAdapter = RecipeRecyclerAdapter()
+
+            binding.recyclerViewMy.apply {
+                layoutManager = LinearLayoutManager(container?.context)
+                adapter = recipeAdapter
+            }
+
+            viewModel.response.value?.let { recipeAdapter.submitList(it) }
+        }
+
+        // Inflate the layout for this fragment
+        return binding.root
+    }
 }

@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/ic_app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.wrmh.allmyfood.views.MainActivity"
+        <activity android:name="com.wrmh.allmyfood.views.login.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

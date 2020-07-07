@@ -40,7 +40,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_wide"
-                            android:text="@string/card_text_title_one"
+                            android:text="@string/lorem"
                             android:textAppearance="?attr/textAppearanceHeadline6" />
 
                         <!-- Media -->
