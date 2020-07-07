@@ -53,12 +53,23 @@
                         tools:listCount="5"/>
 
                     <ImageView
-                        android:layout_width="50dp"
+                        android:id="@+id/btn_add_element"
+                        android:layout_width="60dp"
                         android:layout_height="35dp"
                         android:layout_gravity="end"
                         android:layout_marginRight="@dimen/margin_wide"
                         android:layout_marginBottom="@dimen/margin_wide"
                         app:srcCompat="@drawable/ic_add_circle_black" />
+
+                    <ImageView
+                        android:id="@+id/btn_rm_element"
+                        android:layout_width="60dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="@dimen/margin_wide"
+                        android:layout_marginBottom="@dimen/margin_wide"
+                        android:tint="@android:color/black"
+                        app:srcCompat="@drawable/ic_baseline_remove_circle_black" />
 
 
                 </LinearLayout>

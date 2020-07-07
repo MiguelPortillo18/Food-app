@@ -1,9 +1,15 @@
 package com.wrmh.allmyfood.views
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toFile
 import androidx.databinding.DataBindingUtil
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.api.API
@@ -13,7 +19,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
 class RegisterActivity : AppCompatActivity() {
+
+    private lateinit var imageView : ImageView
+    private lateinit var uriImage: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         title = getString(R.string.title_register)
@@ -31,7 +41,29 @@ class RegisterActivity : AppCompatActivity() {
                 binding.etRegFullname, binding.etRegPass, binding.etRegConfirm, binding.etRegEmail
             )
         }
+
+        //Agregar foto
+        imageView = findViewById<View>(R.id.imv_id) as ImageView
+
+        imageView.setOnClickListener{
+            fun onClick(v: View?) {
+                openGallery()
+            }
+        }
     }
+
+    private fun openGallery(){
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(intent,100);
+    }
+
+    fun onActivityResult(requestCode : Int, resultCode : Int, intent){
+        if(resultCode == RESULT_OK && requestCode == 100){
+            uriImage
+            imageView.setImageURI(uriImage)
+        }
+    }
+    //Hasta aca
 
     private fun onRegisterClick(
         username: EditText, fullname: EditText,

@@ -81,4 +81,5 @@
     <string name="return_text">Regresar</string>
     <string name="list_name">Nombre</string>
     <string name="list_add">Agrega un elemento</string>
+    <string name="add_photo_text">Agrega una foto</string>
 </resources>
