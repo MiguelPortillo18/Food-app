@@ -4,7 +4,7 @@
     <string name="login_text">Iniciar sesión</string>
     <string name="forgotpass_text"> <u>¿Olvidaste tu contraseña?</u></string>
     <string name="newuser_question">¿Usuario nuevo?</string>
-    <string name="username_hint">Nombre de usuario</string>
+    <string name="username_hint">Correo o nombre de usuario</string>
     <string name="password_hint">Tu contraseña</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_text">¡Bienvenido, @User!</string>

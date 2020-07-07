@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrmh.allmyfood.R
-import com.wrmh.allmyfood.adapters.ListRecyclerAdapter
-import com.wrmh.allmyfood.adapters.RecipeRecyclerAdapter
+import com.wrmh.allmyfood.adapters.SelectionListRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentSelectionListBinding
+import com.wrmh.allmyfood.views.HomeActivity
 
 /**
  * A simple [Fragment] subclass.
@@ -20,7 +20,7 @@ import com.wrmh.allmyfood.databinding.FragmentSelectionListBinding
  * create an Instance of this fragment.
  */
 class SelectionListFragment : Fragment() {
-    private lateinit var listAdapter: ListRecyclerAdapter
+    private lateinit var selectionListAdapter: SelectionListRecyclerAdapter
     private lateinit var viewModel: SelectionListViewModel
 
     override fun onCreateView(
@@ -39,17 +39,17 @@ class SelectionListFragment : Fragment() {
         )
 
         viewModel = ViewModelProvider(this).get(SelectionListViewModel::class.java)
-        listAdapter = ListRecyclerAdapter()
+        selectionListAdapter = SelectionListRecyclerAdapter(activity as HomeActivity)
 
         viewModel.callback = {
-            listAdapter = ListRecyclerAdapter()
+            selectionListAdapter = SelectionListRecyclerAdapter(activity as HomeActivity)
 
             binding.recyclerViewLs.apply {
                 layoutManager = LinearLayoutManager(container?.context)
-                adapter = listAdapter
+                adapter = selectionListAdapter
             }
 
-            viewModel.response.value?.let { listAdapter.submitList(it) }
+            viewModel.response.value?.let { selectionListAdapter.submitList(it) }
         }
 
         // Inflate the layout for this fragment

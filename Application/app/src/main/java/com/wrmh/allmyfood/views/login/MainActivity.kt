@@ -3,6 +3,7 @@ package com.wrmh.allmyfood.views.login
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -25,6 +26,8 @@ import com.wrmh.allmyfood.databinding.ActivityMainBinding
 import com.wrmh.allmyfood.models.CurrentUser
 import com.wrmh.allmyfood.views.HomeActivity
 import com.wrmh.allmyfood.views.RegisterActivity
+import timber.log.Timber
+import kotlin.reflect.typeOf
 
 class MainActivity : AppCompatActivity() {
 
@@ -149,31 +152,28 @@ class MainActivity : AppCompatActivity() {
             username.text.toString(),
             password.text.toString(),
             this,
-            spinner,
-            sharedPref
+            spinner
         )
     }
 
     private fun signIn() {
         val signInIntent = mGoogleSignInClient?.signInIntent
-        startActivityForResult(signInIntent, 0)
+        startActivityForResult(signInIntent, 1)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 0) {
+        if (requestCode == 1) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
     }
 
     private fun handleSignInResult(task: Task<GoogleSignInAccount>) {
-        try {
-            var account = task.getResult(ApiException::class.java)
-        } catch (e: ApiException) {
+        val account = task.getResult(ApiException::class.java)
 
-        }
+        viewModel.checkForGoogleSignIn(this, account!!)
     }
 }
 
@@ -184,7 +184,6 @@ TODO: Migue: Agregar items a la lista -> Crear elemento, agregar boton de menos 
 
 TODO: Migue: Crear receta -> Editar titulo, desc, ingredientes y pasos igual a items de la lista
 
-TODO: Google Sign In
 TODO: Migue: Elegir fotos
 
 TODO: Ver receta completa

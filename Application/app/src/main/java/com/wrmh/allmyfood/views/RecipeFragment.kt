@@ -10,11 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.databinding.FragmentRecipeBinding
+import com.wrmh.allmyfood.models.RecipeModel
 
 /**
  * A simple [Fragment] subclass.
  */
-class RecipeFragment : Fragment() {
+class RecipeFragment(openRecipe: RecipeModel?) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

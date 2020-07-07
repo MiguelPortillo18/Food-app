@@ -27,8 +27,14 @@ interface API {
     ): Deferred<RegisterResponse>
 
     @GET("user")
-    fun loginUserAsync(
+    fun loginUserWithNameAsync(
         @Query("username") username: String,
+        @Query("password") password: String
+    ): Deferred<LoginResponse>
+
+    @GET("user")
+    fun loginUserWithEmailAsync(
+        @Query("email") email: String,
         @Query("password") password: String
     ): Deferred<LoginResponse>
 

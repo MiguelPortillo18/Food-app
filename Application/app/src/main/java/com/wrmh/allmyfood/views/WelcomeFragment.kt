@@ -36,7 +36,7 @@ class WelcomeFragment : Fragment() {
         val sharedPref = activity?.getSharedPreferences("USER_LOG", Context.MODE_PRIVATE)
 
         binding.apply {
-            textView.text = "¡Bienvenido, ${CurrentUser.username}!"
+            textView.text = "¡Bienvenido, ${CurrentUser.fullname!!.split(" ")[0]}!"
             onLoggingOut?.setOnClickListener{
 
                 val editor = sharedPref?.edit()
