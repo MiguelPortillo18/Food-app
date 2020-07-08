@@ -19,7 +19,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.7">
+                    app:layout_constraintVertical_bias="0.6">
 
                         <ImageView
                             android:id="@+id/imageView"
@@ -60,7 +60,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.45999998">
+                    app:layout_constraintVertical_bias="0.41000003">
 
                         <EditText
                             android:id="@+id/et_regUsr"
@@ -116,7 +116,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                    app:layout_constraintVertical_bias="0.120000005">
+                    app:layout_constraintVertical_bias="0.0">
 
                         <EditText
                             android:id="@+id/et_regPass"
@@ -149,6 +149,42 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tv_add_image"
+                    style="@style/font_small_style_tablet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginEnd="@dimen/margin_big"
+                    android:layout_marginBottom="@dimen/margin_wide"
+                    android:onClick="onClick"
+                    android:text="@string/add_photo_text"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_register"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.52"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewProfile"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="174dp"
+                    android:layout_height="115dp"
+                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:layout_marginEnd="@dimen/margin_wide"
+                    android:layout_marginBottom="84dp"
+                    android:contentDescription="@string/profileImage_desc"
+                    android:src="@drawable/image_ph"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_register"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                    app:layout_constraintVertical_bias="0.97" />
+
                 <Button
                     android:id="@+id/btn_register"
                     style="@style/button_style_tablet"
@@ -165,9 +201,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.85" />
-
-
+                    app:layout_constraintVertical_bias="0.95" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
