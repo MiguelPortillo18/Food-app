@@ -84,4 +84,5 @@
     <string name="add_photo_text"> <u>Agrega tu foto de perfil</u></string>
     <string name="profileImage_desc">profileImage</string>
     <string name="tv_add_recipe_image"><u>Agrega imagen de tu receta</u></string>
+    <string name="save">Guardar</string>
 </resources>

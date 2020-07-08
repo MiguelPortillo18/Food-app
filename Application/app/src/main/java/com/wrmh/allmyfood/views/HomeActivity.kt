@@ -1,6 +1,5 @@
 package com.wrmh.allmyfood.views
 
-import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -32,7 +31,17 @@ class HomeActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        finishAffinity()
+        if (
+            supportFragmentManager.findFragmentById(R.id.myNavHostFragment)
+                ?.childFragmentManager?.fragments?.first()
+                ?.javaClass === WelcomeFragment::class.java
+        ) {
+            Toast.makeText(applicationContext, "¡Vuelve pronto!", Toast.LENGTH_LONG).show()
+            finishAffinity()
+        }
+        else{
+            super.onBackPressed()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

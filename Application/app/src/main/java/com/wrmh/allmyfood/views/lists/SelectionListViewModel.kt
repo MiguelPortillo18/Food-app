@@ -1,11 +1,13 @@
 package com.wrmh.allmyfood.views.lists
 
+import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.api.API
 import com.wrmh.allmyfood.models.CurrentUser
-import com.wrmh.allmyfood.models.ElementModel
 import com.wrmh.allmyfood.models.ListModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,7 +35,7 @@ class SelectionListViewModel : ViewModel() {
 
     private fun getUserLists() {
         coroutineScope.launch {
-            val getListsDeferred = API().getUserLists(CurrentUser.username!!)
+            val getListsDeferred = API().getUserListsAsync(CurrentUser.username!!)
 
             try {
                 val apiResponse = getListsDeferred.await()
@@ -43,13 +45,7 @@ class SelectionListViewModel : ViewModel() {
                 if(apiResponse.lists.isEmpty())
                     throw Exception()
             } catch (e: Exception) {
-                _lists.value = arrayListOf(
-                    ListModel(
-                        "Agrega una lista para visualizar acá ...",
-                        "",
-                        ArrayList<ElementModel>()
-                    )
-                )
+                _lists.value = ArrayList()
             }
             finally {
                 callback()

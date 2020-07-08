@@ -16,7 +16,6 @@ import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.adapters.SelectionListRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentSelectionListBinding
 import com.wrmh.allmyfood.models.ListModel
-import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -61,6 +60,17 @@ class SelectionListFragment : Fragment() {
             }
         })
 
+        binding.btnAddList?.setOnClickListener {
+            val list = ListModel("UNCREATED_LIST", "", "", ArrayList())
+
+            val bundle = bundleOf("list" to list)
+
+            this.findNavController().navigate(
+                R.id.action_selectionListFragment_to_myListFragment,
+                bundle
+            )
+        }
+
         viewModel.callback = {
             updateRecyclerView()
         }
@@ -68,7 +78,7 @@ class SelectionListFragment : Fragment() {
         return binding.root
     }
 
-    private fun updateRecyclerView(){
+    private fun updateRecyclerView() {
         binding.recyclerViewLs.apply {
             layoutManager = LinearLayoutManager(this.context)
             adapter = selectionListAdapter

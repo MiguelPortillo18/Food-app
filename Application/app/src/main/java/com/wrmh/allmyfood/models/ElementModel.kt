@@ -4,4 +4,4 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ElementModel (val desc: String, val quantity: String) : Parcelable
+data class ElementModel (var desc: String, val quantity: String) : Parcelable

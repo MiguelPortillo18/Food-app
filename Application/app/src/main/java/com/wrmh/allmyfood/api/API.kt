@@ -1,14 +1,11 @@
 package com.wrmh.allmyfood.api
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.wrmh.allmyfood.responses.ListResponse
-import com.wrmh.allmyfood.responses.LoginResponse
-import com.wrmh.allmyfood.responses.RecipeResponse
-import com.wrmh.allmyfood.responses.RegisterResponse
+import com.wrmh.allmyfood.models.ListModel
+import com.wrmh.allmyfood.responses.*
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
@@ -47,9 +44,16 @@ interface API {
     fun exploreRecipesAsync(): Deferred<RecipeResponse>
 
     @GET("list")
-    fun getUserLists(
+    fun getUserListsAsync(
         @Query("username") username: String
     ): Deferred<ListResponse>
+
+    @FormUrlEncoded
+    @POST("list")
+    fun createList(
+        @Field("username") username: String,
+        @Field("listData") listData: ListModel
+    ): Deferred<DefaultResponse>
 
     companion object {
         operator fun invoke(): API {
