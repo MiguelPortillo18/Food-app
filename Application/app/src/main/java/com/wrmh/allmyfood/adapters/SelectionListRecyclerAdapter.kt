@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.models.ListModel
-import kotlinx.android.synthetic.main.list_overview_component.view.*
+import kotlinx.android.synthetic.main.component_list_overview.view.*
 
 class SelectionListRecyclerAdapter(
     private val onClickListener: OnClickListener
@@ -17,7 +17,7 @@ class SelectionListRecyclerAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ListViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.list_overview_component, parent, false)
+                .inflate(R.layout.component_list_overview, parent, false)
         )
     }
 

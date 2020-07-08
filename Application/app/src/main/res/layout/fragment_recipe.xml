@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                app:cardCornerRadius="@dimen/margin_wide">
+                app:cardCornerRadius="@dimen/margin_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -35,13 +35,14 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start|end"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:padding="0dp">
 
                         <!-- Title and supporting text -->
                         <TextView
                             style="@style/font_style_grey_bold_title"
+                            android:textSize="24sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_wide"
@@ -77,75 +78,42 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <!-- TODO: Recycler view -->
                         <TextView
                             style="@style/font_style_grey_bold_title"
+                            android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/margin_wide"
                             android:text="@string/string_ingredients" />
 
-                        <ListView
-                            android:id="@+id/listview"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_ingredients"
                             android:layout_width="match_parent"
-                            android:layout_height="197dp" />
+                            android:layout_height="wrap_content"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/component_ingredient" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="402dp"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
                             style="@style/font_style_grey_bold_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAlignment="center"
                             android:padding="@dimen/margin_wide"
                             android:text="@string/text_preparacion" />
 
-                        <!-- TODO: Recycler view -->
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_steps"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/check_text_one" />
-
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/chekck_text_two" />
-
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/check_text_three" />
-
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="61dp"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/check_text_four" />
-
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="61dp"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/check_text_five" />
-
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="61dp"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/check_text_six" />
+                            tools:listitem="@layout/component_non_editable_list_item"
+                            tools:itemCount="2"/>
 
                     </LinearLayout>
 

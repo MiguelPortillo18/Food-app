@@ -16,7 +16,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:itemCount="12"
-            tools:listitem="@layout/list_overview_component"
+            tools:listitem="@layout/component_list_overview"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             >
 

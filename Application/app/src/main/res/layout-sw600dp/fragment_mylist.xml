@@ -49,7 +49,7 @@
                         android:id="@+id/recycler_view_ml"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:listitem="@layout/editable_list_item"
+                        tools:listitem="@layout/component_editable_list_item"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         tools:listCount="5"/>
 

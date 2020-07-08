@@ -7,21 +7,31 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
 import com.wrmh.allmyfood.R
+import com.wrmh.allmyfood.adapters.IngredientsRecyclerAdapter
+import com.wrmh.allmyfood.adapters.StepsRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentRecipeBinding
 import com.wrmh.allmyfood.factory.RecipesViewModelFactory
 import com.wrmh.allmyfood.models.RecipeModel
 import com.wrmh.allmyfood.views.recipes.DetailRecipeViewModel
-import com.wrmh.allmyfood.views.recipes.RecipesViewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class RecipeFragment : Fragment() {
+
+    private val ingredientAdapter by lazy {
+        IngredientsRecyclerAdapter()
+    }
+
+    private val stepsAdapter by lazy {
+        StepsRecyclerAdapter()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,6 +53,20 @@ class RecipeFragment : Fragment() {
 
         binding.btnReturnRecipe.setOnClickListener {
             it.findNavController().navigate(R.id.action_recipeFragment_to_exploreFragment)
+        }
+
+        binding.recyclerViewIngredients?.apply {
+            layoutManager = LinearLayoutManager(container?.context)
+            adapter = ingredientAdapter
+
+            recipe.ingredients?.let { ingredientAdapter.submitList(it) }
+        }
+
+        binding.recyclerViewSteps?.apply {
+            layoutManager = LinearLayoutManager(container?.context)
+            adapter = stepsAdapter
+
+            recipe.steps?.let { stepsAdapter.submitList(it) }
         }
 
         binding.recipeDetailDesc?.text = recipe.desc

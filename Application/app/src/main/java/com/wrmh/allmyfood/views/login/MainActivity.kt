@@ -87,27 +87,14 @@ class MainActivity : AppCompatActivity() {
             lastLoggedUserImage!!
         )
 
+        supportActionBar?.hide()
+
         startActivity(Intent(this, HomeActivity::class.java))
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.options_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.aboutFragment -> {
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     override fun onStart() {
         super.onStart()
-        var account = GoogleSignIn.getLastSignedInAccount(this)
+        GoogleSignIn.getLastSignedInAccount(this)
 
         val signInButton = findViewById<SignInButton>(R.id.sign_in_button)
         signInButton.setSize(SignInButton.SIZE_STANDARD)
@@ -146,7 +133,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
+        this.getPreferences(Context.MODE_PRIVATE) ?: return
 
         viewModel.loginUser(
             username.text.toString(),

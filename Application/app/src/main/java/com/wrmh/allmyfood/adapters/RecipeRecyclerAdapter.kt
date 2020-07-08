@@ -8,9 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.wrmh.allmyfood.R
-import com.wrmh.allmyfood.models.ListModel
 import com.wrmh.allmyfood.models.RecipeModel
-import kotlinx.android.synthetic.main.card_component.view.*
+import kotlinx.android.synthetic.main.component_card.view.*
 
 class RecipeRecyclerAdapter(
     private val onClickListener: OnClickListener
@@ -20,7 +19,7 @@ class RecipeRecyclerAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return RecipeViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.card_component, parent, false)
+                .inflate(R.layout.component_card, parent, false)
         )
     }
 

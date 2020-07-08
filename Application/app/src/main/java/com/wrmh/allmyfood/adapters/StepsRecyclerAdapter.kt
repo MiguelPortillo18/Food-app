@@ -7,13 +7,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.models.ElementModel
+import com.wrmh.allmyfood.models.StepModel
 import kotlinx.android.synthetic.main.component_non_editable_list_item.view.*
 
-class MyListRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var items: List<ElementModel> = ArrayList()
+class StepsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var items: List<StepModel> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return RecipeViewHolder(
+        return StepViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.component_non_editable_list_item, parent, false)
         )
@@ -21,7 +22,7 @@ class MyListRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is RecipeViewHolder -> {
+            is StepViewHolder -> {
                 holder.bind(items[position])
             }
         }
@@ -31,17 +32,17 @@ class MyListRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    fun submitList(elementsList: List<ElementModel>) {
-        items = elementsList
+    fun submitList(steps: List<StepModel>) {
+        items = steps
     }
 
-    class RecipeViewHolder constructor(
+    class StepViewHolder constructor(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
         private val listEditable: TextView = itemView.view_list_item
 
-        fun bind(listElement: ElementModel) {
-            listEditable.text = listElement.desc + ", " + listElement.quantity
+        fun bind(step: StepModel) {
+            listEditable.text = step.step
         }
     }
 }
