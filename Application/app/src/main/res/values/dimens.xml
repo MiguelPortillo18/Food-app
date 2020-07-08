@@ -10,6 +10,7 @@
     <dimen name="text_small">14sp</dimen>
     <dimen name="text_small_tablet">24sp</dimen>
     <dimen name="text_logo">30sp</dimen>
+    <dimen name="text_logo_register">22sp</dimen>
     <dimen name="text_logo_tablet">36sp</dimen>
     <dimen name="margin_big">32dp</dimen>
     <dimen name="margin_medium">50dp</dimen>
@@ -18,5 +19,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_bigger">64dp</dimen>
-    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
 </resources>

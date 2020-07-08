@@ -46,10 +46,20 @@
                         <!-- Media -->
 
                         <ImageView
+                            android:id="@+id/imageViewRecipe"
                             android:layout_width="match_parent"
                             android:layout_height="130dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/pupusas" />
+                            app:srcCompat="@drawable/image_ph" />
+
+                        <TextView
+                            android:id="@+id/tv_add_recipe_image"
+                            style="@style/font_small_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:text="@string/tv_add_recipe_image"
+                            android:textAlignment="center"/>
 
                         <EditText
                             android:layout_width="match_parent"

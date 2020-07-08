@@ -10,20 +10,23 @@
             android:background="@drawable/background">
 
                 <LinearLayout
-                    android:layout_width="205dp"
-                    android:layout_height="180dp"
-                    android:layout_marginTop="@dimen/margin_wide"
-                    android:layout_marginBottom="@dimen/margin_big"
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="200dp"
+                    android:layout_height="124dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="@dimen/margin_wide"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
 
                         <ImageView
                             android:id="@+id/imageView"
-                            android:layout_width="181dp"
-                            android:layout_height="113dp"
+                            android:layout_width="168dp"
+                            android:layout_height="70dp"
                             android:layout_marginStart="@dimen/margin_wide"
                             android:layout_marginTop="@dimen/margin_wide"
                             android:layout_marginEnd="@dimen/margin_wide"
@@ -51,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_big"
-                    android:layout_marginTop="@dimen/margin_wide"
+                    android:layout_marginTop="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/margin_big"
                     android:layout_marginBottom="@dimen/margin_wide"
                     android:orientation="vertical"
@@ -59,7 +62,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.45">
+                    app:layout_constraintVertical_bias="0.3">
 
                         <EditText
                             android:id="@+id/et_regUsr"
@@ -72,78 +75,87 @@
                             android:layout_marginBottom="@dimen/margin_small"
                             android:drawableStart="@drawable/ic_user_black"
                             android:drawablePadding="@dimen/margin_small"
-                            android:hint="@string/username_hint" />
+                            android:hint="@string/username_hint"
+                            android:inputType="text"
+                            android:autofillHints="" />
 
                         <EditText
                             android:id="@+id/et_regFullname"
                             style="@style/editText_style"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_user_black"
-                            android:drawablePadding="@dimen/margin_small"
                             android:layout_marginStart="@dimen/margin_wide"
                             android:layout_marginTop="@dimen/margin_small"
                             android:layout_marginEnd="@dimen/margin_wide"
                             android:layout_marginBottom="@dimen/margin_small"
-                            android:hint="@string/fullname_hint" />
+                            android:drawableStart="@drawable/ic_user_black"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:hint="@string/fullname_hint"
+                            android:inputType="text"
+                            android:autofillHints=""/>
 
                         <EditText
                             android:id="@+id/et_regEmail"
                             style="@style/editText_style"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_mail_black"
-                            android:drawablePadding="@dimen/margin_small"
                             android:layout_marginStart="@dimen/margin_wide"
                             android:layout_marginTop="@dimen/margin_small"
                             android:layout_marginEnd="@dimen/margin_wide"
                             android:layout_marginBottom="@dimen/margin_wide"
-                            android:hint="@string/email_hint" />
+                            android:drawableStart="@drawable/ic_mail_black"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:hint="@string/email_hint"
+                            android:inputType="textEmailAddress"
+                            android:autofillHints="" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linearLayout4"
                     style="@style/fillgroupStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_big"
-                    android:layout_marginTop="@dimen/margin_wide"
+                    android:layout_marginTop="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/margin_big"
-                    android:layout_marginBottom="@dimen/margin_big"
+                    android:layout_marginBottom="@dimen/margin_wide"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toTopOf="@+id/btn_register"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                    app:layout_constraintVertical_bias="0.120000005">
+                    app:layout_constraintVertical_bias="0.0">
 
                         <EditText
                             android:id="@+id/et_regPass"
                             style="@style/editText_style"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_lock_black"
-                            android:drawablePadding="@dimen/margin_small"
                             android:layout_marginStart="@dimen/margin_wide"
                             android:layout_marginTop="@dimen/margin_wide"
                             android:layout_marginEnd="@dimen/margin_wide"
                             android:layout_marginBottom="@dimen/margin_small"
+                            android:drawableStart="@drawable/ic_lock_black"
+                            android:drawablePadding="@dimen/margin_small"
                             android:hint="@string/password_hint"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            android:importantForAutofill="no" />
 
                         <EditText
                             android:id="@+id/et_regConfirm"
                             style="@style/editText_style"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_lock_black"
-                            android:drawablePadding="@dimen/margin_small"
                             android:layout_marginStart="@dimen/margin_wide"
                             android:layout_marginTop="@dimen/margin_small"
                             android:layout_marginEnd="@dimen/margin_wide"
                             android:layout_marginBottom="@dimen/margin_wide"
+                            android:drawableStart="@drawable/ic_lock_black"
+                            android:drawablePadding="@dimen/margin_small"
                             android:hint="@string/hint_confirmPass"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            android:autofillHints="" />
 
 
                 </LinearLayout>
@@ -156,7 +168,7 @@
                     android:layout_marginStart="@dimen/margin_bigger"
                     android:layout_marginTop="@dimen/margin_big"
                     android:layout_marginEnd="@dimen/margin_bigger"
-                    android:layout_marginBottom="@dimen/margin_wide"
+                    android:layout_marginBottom="@dimen/margin_small"
                     android:paddingLeft="@dimen/margin_wide"
                     android:paddingRight="@dimen/margin_wide"
                     android:text="@string/btn_reg_text"
@@ -166,6 +178,38 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0" />
 
+                <TextView
+                    android:id="@+id/tv_add_image"
+                    style="@style/font_small_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginEnd="@dimen/margin_wide"
+                    android:layout_marginBottom="@dimen/margin_wide"
+                    android:text="@string/add_photo_text"
+                    android:textAlignment="center"
+                    android:onClick="onClick"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_register"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.52"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewProfile"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="99dp"
+                    android:layout_height="74dp"
+                    android:layout_marginStart="@dimen/margin_wide"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_wide"
+                    android:src="@drawable/image_ph"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:contentDescription="@string/profileImage_desc" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

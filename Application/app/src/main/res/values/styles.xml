@@ -76,7 +76,7 @@
     <style name="font_logo">
         <item name="fontFamily">@font/fredoka_one</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">@dimen/text_logo</item>
+        <item name="android:textSize">@dimen/text_logo_register</item>
     </style>
 
     <style name="font_logo_tablet">
