@@ -19,7 +19,7 @@
         android:id="@+id/exploreFragment"
         android:name="com.wrmh.allmyfood.views.recipes.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" >
+        tools:layout="@layout/fragment_explore">
         <action
             android:id="@+id/action_exploreFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
@@ -28,12 +28,24 @@
         android:id="@+id/myListFragment"
         android:name="com.wrmh.allmyfood.views.lists.MyListFragment"
         android:label="fragment_mylist"
-        tools:layout="@layout/fragment_mylist" />
+        tools:layout="@layout/fragment_mylist">
+
+        <argument
+            android:name="selectedProperty"
+            app:argType="com.wrmh.allmyfood.models.ListModel" />
+        <action
+            android:id="@+id/action_myListFragment_to_selectionListFragment"
+            app:destination="@id/selectionListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myRecipesFragment"
         android:name="com.wrmh.allmyfood.views.recipes.MyRecipesFragment"
         android:label="fragment_my_recipes"
-        tools:layout="@layout/fragment_my_recipes" />
+        tools:layout="@layout/fragment_my_recipes" >
+        <action
+            android:id="@+id/action_myRecipesFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createRecipeFragment"
         android:name="com.wrmh.allmyfood.views.CreateRecipeFragment"
@@ -43,17 +55,24 @@
         android:id="@+id/recipeFragment"
         android:name="com.wrmh.allmyfood.views.RecipeFragment"
         android:label="fragment_recipe"
-        tools:layout="@layout/fragment_recipe" >
+        tools:layout="@layout/fragment_recipe">
+        <argument
+            android:name="selectedProperty"
+            app:argType="com.wrmh.allmyfood.models.RecipeModel" />
         <action
             android:id="@+id/action_recipeFragment_to_exploreFragment"
             app:destination="@id/exploreFragment"
+            app:popUpTo="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_myRecipesFragment"
+            app:destination="@id/myRecipesFragment"
             app:popUpTo="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/selectionListFragment"
         android:name="com.wrmh.allmyfood.views.lists.SelectionListFragment"
         android:label="fragment_selection_list"
-        tools:layout="@layout/fragment_selection_list" >
+        tools:layout="@layout/fragment_selection_list">
         <action
             android:id="@+id/action_selectionListFragment_to_myListFragment"
             app:destination="@id/myListFragment" />

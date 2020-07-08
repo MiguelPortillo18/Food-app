@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.adapters.SelectionListRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentSelectionListBinding
-import com.wrmh.allmyfood.views.HomeActivity
+import com.wrmh.allmyfood.models.ListModel
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -22,6 +26,7 @@ import com.wrmh.allmyfood.views.HomeActivity
 class SelectionListFragment : Fragment() {
     private lateinit var selectionListAdapter: SelectionListRecyclerAdapter
     private lateinit var viewModel: SelectionListViewModel
+    private lateinit var binding: FragmentSelectionListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,28 +36,49 @@ class SelectionListFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title =
             getString(R.string.title_shop_list)
 
-        val binding = DataBindingUtil.inflate<FragmentSelectionListBinding>(
+        binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_selection_list,
             container,
             false
         )
 
+        selectionListAdapter = SelectionListRecyclerAdapter(SelectionListRecyclerAdapter
+            .OnClickListener {
+                viewModel.displayListDetail(it)
+            })
+
         viewModel = ViewModelProvider(this).get(SelectionListViewModel::class.java)
-        selectionListAdapter = SelectionListRecyclerAdapter(activity as HomeActivity)
+
+        viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                val bundle = bundleOf("list" to it)
+
+                this.findNavController()
+                    .navigate(R.id.action_selectionListFragment_to_myListFragment, bundle)
+
+                viewModel.displayListDetailCompleted()
+            }
+        })
 
         viewModel.callback = {
-            selectionListAdapter = SelectionListRecyclerAdapter(activity as HomeActivity)
+            updateRecyclerView()
+        }
 
-            binding.recyclerViewLs.apply {
-                layoutManager = LinearLayoutManager(container?.context)
-                adapter = selectionListAdapter
-            }
+        return binding.root
+    }
+
+    private fun updateRecyclerView(){
+        binding.recyclerViewLs.apply {
+            layoutManager = LinearLayoutManager(this.context)
+            adapter = selectionListAdapter
 
             viewModel.response.value?.let { selectionListAdapter.submitList(it) }
         }
+    }
 
-        // Inflate the layout for this fragment
-        return binding.root
+    override fun onResume() {
+        super.onResume()
+        updateRecyclerView()
     }
 }

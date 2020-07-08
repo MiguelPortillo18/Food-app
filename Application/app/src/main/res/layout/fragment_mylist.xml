@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".views.lists.MyListFragment">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.wrmh.allmyfood.views.lists.MyListViewModel" />
+    </data>
+    
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,15 +32,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <EditText
+                    <TextView
                         style="@style/font_style_grey_bold_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/margin_wide"
                         android:layout_margin="@dimen/margin_wide"
-                        android:hint="@string/list_name"
-                        android:importantForAutofill="no"
-                        android:inputType="text" />
+                        android:text="@{viewModel.selectedProperty.name}"
+                        tools:text="@string/placeholder"/>
 
                     <TextView
                         style="@style/font_style_grey_bold"
@@ -57,9 +62,10 @@
                         android:layout_width="50dp"
                         android:layout_height="35dp"
                         android:layout_gravity="end"
-                        android:layout_marginRight="@dimen/margin_wide"
+                        android:layout_marginEnd="@dimen/margin_wide"
                         android:layout_marginBottom="@dimen/margin_wide"
-                        app:srcCompat="@drawable/ic_add_circle_black" />
+                        app:srcCompat="@drawable/ic_add_circle_black"
+                        android:contentDescription="@string/placeholder" />
 
 
                 </LinearLayout>

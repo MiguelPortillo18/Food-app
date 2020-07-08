@@ -2,10 +2,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.wrmh.allmyfood.views.recipes.DetailRecipeViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,23 +45,28 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_wide"
-                            android:text="@string/lorem"
-                            android:textAppearance="?attr/textAppearanceHeadline6" />
+                            android:text="@{viewModel.selectedProperty.title}"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            tools:text="@string/placeholder"/>
 
                         <!-- Media -->
 
                         <ImageView
+                            android:id="@+id/recipe_detail_image"
                             android:layout_width="match_parent"
                             android:layout_height="130dp"
                             android:scaleType="centerCrop"
+                            android:src="@drawable/image_ph"
                             app:srcCompat="@drawable/pupusas" />
 
                         <TextView
-                            style="@style/font_style"
+                            android:id="@+id/recipe_detail_desc"
+                            style="@style/font_style_grey"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_wide"
-                            android:text="@string/card_desc_complete"
+                            android:text="@{viewModel.selectedProperty.desc}"
+                            tools:text="@string/lorem_long"
                             android:textAppearance="?attr/textAppearanceBody2"
                             android:textColor="?android:attr/textColorSecondary" />
 
@@ -67,6 +77,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <!-- TODO: Recycler view -->
                         <TextView
                             style="@style/font_style_grey_bold_title"
                             android:layout_width="match_parent"
@@ -93,6 +104,7 @@
                             android:padding="@dimen/margin_wide"
                             android:text="@string/text_preparacion" />
 
+                        <!-- TODO: Recycler view -->
                         <CheckBox
                             style="@style/checkBox_style"
                             android:layout_width="wrap_content"

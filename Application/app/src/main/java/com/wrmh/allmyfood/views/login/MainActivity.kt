@@ -179,13 +179,7 @@ class MainActivity : AppCompatActivity() {
 
 /*
 TODO: Crear lista
-
+TODO: Limitar descripcion de receta a length <= 500
 TODO: Migue: Agregar items a la lista -> Crear elemento, agregar boton de menos para eliminar elemento y agregar boton para enviar a la API
-
 TODO: Migue: Crear receta -> Editar titulo, desc, ingredientes y pasos igual a items de la lista
-
-TODO: Migue: Elegir fotos
-
-TODO: Ver receta completa
-TODO: Ver lista completa
  */
