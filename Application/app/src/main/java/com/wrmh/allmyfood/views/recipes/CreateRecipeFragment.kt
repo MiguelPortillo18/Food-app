@@ -73,6 +73,8 @@ class CreateRecipeFragment : Fragment() {
                         permissions,
                         1
                     )
+
+                    loadRecipeImage()
                 } else {
                     loadRecipeImage()
                 }

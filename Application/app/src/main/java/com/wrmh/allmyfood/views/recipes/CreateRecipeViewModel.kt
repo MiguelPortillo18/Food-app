@@ -32,10 +32,16 @@ class CreateRecipeViewModel : ViewModel() {
         val body =
             MultipartBody.Part.createFormData("recipeImage", file.name, requestFile)
 
+        val author = RequestBody.create(MediaType.parse("multipart/form-data"),
+            recipeToCreate.author)
+
+
+
+
         coroutineScope.launch {
 
             val createRecipeDeferred = API().createRecipeAsync(
-                recipeToCreate.author,
+                author,
                 recipeToCreate.title,
                 recipeToCreate.desc,
                 recipeToCreate.steps!!,

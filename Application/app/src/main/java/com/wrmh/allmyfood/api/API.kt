@@ -7,6 +7,7 @@ import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
+import okhttp3.RequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
@@ -47,12 +48,12 @@ interface API {
     @Multipart
     @POST("recipe")
     fun createRecipeAsync(
-        @Part("author") author: String,
-        @Part("title") title: String,
-        @Part("desc") desc: String,
-        @Part("steps") steps: List<StepModel>,
-        @Part("ingredients") ingredients: List<IngredientModel>,
-        @Part("privacy") privacy: Boolean,
+        @Part("author") author: RequestBody,
+        @Part("title") title: RequestBody,
+        @Part("desc") desc: RequestBody,
+        @Part("steps") steps: RequestBody,
+        @Part("ingredients") ingredients: RequestBody,
+        @Part("privacy") privacy: RequestBody,
         @Part recipeImage: MultipartBody.Part
     ): Deferred<DefaultResponse>
 

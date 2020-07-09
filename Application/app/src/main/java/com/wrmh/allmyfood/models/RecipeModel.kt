@@ -10,8 +10,8 @@ data class RecipeModel(
     var title: String,
     var desc: String,
     var recipeType: List<String>?,
-    @SerializedName("steps") var steps: List<StepModel>?,
-    @SerializedName("ingredients") var ingredients: List<IngredientModel>?,
+    var steps: List<StepModel>?,
+    var ingredients: List<IngredientModel>?,
     var privacy: Boolean,
     var recipeImage: String?
 ) : Parcelable
