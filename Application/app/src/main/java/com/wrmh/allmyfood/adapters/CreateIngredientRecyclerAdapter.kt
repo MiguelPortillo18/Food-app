@@ -9,7 +9,6 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wrmh.allmyfood.R
-import com.wrmh.allmyfood.models.IngredientModel
 import kotlinx.android.synthetic.main.component_editable_list_item.view.*
 
 
@@ -17,7 +16,7 @@ class CreateIngredientRecyclerAdapter(
     private val changeListener: OnChangeListener,
     private val clickListener: OnClickListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var items: List<IngredientModel> = ArrayList()
+    private var items: List<String> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return CreateIngredientViewHolder(
@@ -50,6 +49,7 @@ class CreateIngredientRecyclerAdapter(
                     clickListener.onClick(position, (it as CheckBox).isChecked)
                 }
 
+                holder.itemView.requestFocus()
                 holder.bind(items[position])
             }
         }
@@ -59,7 +59,7 @@ class CreateIngredientRecyclerAdapter(
         return items.size
     }
 
-    fun submitList(elementsList: List<IngredientModel>) {
+    fun submitList(elementsList: List<String>) {
         items = elementsList
     }
 
@@ -68,20 +68,20 @@ class CreateIngredientRecyclerAdapter(
     ) : RecyclerView.ViewHolder(itemView) {
         private val listEditable: TextView = itemView.list_editable
 
-        fun bind(ingredient: IngredientModel) {
-            listEditable.text = ingredient.ingredient
+        fun bind(ingredient: String) {
+            listEditable.text = ingredient
         }
     }
 
     class OnChangeListener(
         val changeListener: (
-            list: IngredientModel,
+            list: String,
             position: Int,
             s: CharSequence
         ) -> Unit
     ) {
         fun onChange(
-            element: IngredientModel,
+            element: String,
             position: Int,
             s: CharSequence
         ) = changeListener(element, position, s)

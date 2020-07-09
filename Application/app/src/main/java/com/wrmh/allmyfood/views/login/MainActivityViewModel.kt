@@ -14,6 +14,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import okhttp3.MultipartBody
+import retrofit2.http.Multipart
 
 class MainActivityViewModel : ViewModel() {
     private val viewModelJob = Job()
@@ -42,13 +44,17 @@ class MainActivityViewModel : ViewModel() {
         }
     }
 
-    fun checkForGoogleSignIn(context: Context, account: GoogleSignInAccount) {
+    fun checkForGoogleSignIn(context: Context, account: GoogleSignInAccount, spinner: ProgressBar) {
         coroutineScope.launch {
+            spinner.visibility = View.VISIBLE
+
             val getRegisterDeferred = API().createUserAsync(
                 account.email!!,
                 account.displayName!!,
                 account.id!!,
-                account.photoUrl.toString()
+                account.email!!,
+                account.photoUrl.toString(),
+                MultipartBody.Part.createFormData("", "")
             )
 
             try {
@@ -75,6 +81,9 @@ class MainActivityViewModel : ViewModel() {
                 callback()
             } catch (e: Exception) {
                 Toast.makeText(context, R.string.error, Toast.LENGTH_LONG).show()
+            }
+            finally {
+                spinner.visibility = View.INVISIBLE
             }
         }
     }

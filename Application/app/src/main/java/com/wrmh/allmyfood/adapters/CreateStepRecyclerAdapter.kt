@@ -17,7 +17,7 @@ class CreateStepRecyclerAdapter(
     private val changeListener: OnChangeListener,
     private val clickListener: OnClickListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var items: List<StepModel> = ArrayList()
+    private var items: List<String> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return CreateStepViewHolder(
@@ -59,7 +59,7 @@ class CreateStepRecyclerAdapter(
         return items.size
     }
 
-    fun submitList(elementsList: List<StepModel>) {
+    fun submitList(elementsList: List<String>) {
         items = elementsList
     }
 
@@ -68,20 +68,20 @@ class CreateStepRecyclerAdapter(
     ) : RecyclerView.ViewHolder(itemView) {
         private val listEditable: TextView = itemView.list_editable
 
-        fun bind(step: StepModel) {
-            listEditable.text = step.step
+        fun bind(step: String) {
+            listEditable.text = step
         }
     }
 
     class OnChangeListener(
         val changeListener: (
-            list: StepModel,
+            list: String,
             position: Int,
             s: CharSequence
         ) -> Unit
     ) {
         fun onChange(
-            element: StepModel,
+            element: String,
             position: Int,
             s: CharSequence
         ) = changeListener(element, position, s)

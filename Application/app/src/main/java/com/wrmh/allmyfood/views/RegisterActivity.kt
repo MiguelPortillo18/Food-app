@@ -1,30 +1,35 @@
 package com.wrmh.allmyfood.views
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.EditText
-import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.net.toFile
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.wrmh.allmyfood.R
-import com.wrmh.allmyfood.api.API
 import com.wrmh.allmyfood.databinding.ActivityRegisterBinding
 import com.wrmh.allmyfood.models.CurrentUser
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var imageView : ImageView
+    private lateinit var circleImageView : CircleImageView
+    private lateinit var spinner: ProgressBar
+
+    private val viewModel by lazy {
+        ViewModelProvider(this).get(RegisterActivityViewModel::class.java)
+    }
+
+    private var path: Uri = Uri.parse("")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         title = getString(R.string.title_register)
@@ -36,6 +41,9 @@ class RegisterActivity : AppCompatActivity() {
             R.layout.activity_register
         )
 
+        spinner = binding.progressBarReg!!
+        spinner.bringToFront()
+
         binding.btnRegister.setOnClickListener {
             onRegisterClick(
                 binding.etRegUsr,
@@ -43,15 +51,27 @@ class RegisterActivity : AppCompatActivity() {
             )
         }
 
-        imageView = binding.imageView
+        viewModel.callback = {
+            val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
 
+            with(sharedPref.edit()) {
+                putString(getString(R.string.k_username), CurrentUser.username)
+                putString(getString(R.string.k_fullname), CurrentUser.fullname)
+                putString(getString(R.string.k_userImage), CurrentUser.userImage)
+                apply()
+            }
+
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
+
+        circleImageView = binding.imageViewProfile as CircleImageView
     }
 
     fun onClick(view: View) {
         loadImage()
     }
 
-    fun loadImage(){
+    private fun loadImage(){
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         intent.type = "image/*"
         startActivityForResult(intent, 10)
@@ -61,8 +81,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(resultCode == Activity.RESULT_OK){
-            val path : Uri? = data?.getData()
-            imageViewProfile.setImageURI(path)
+            path = data?.data!!
+            circleImageView.setImageURI(path)
         }
     }
 
@@ -129,21 +149,15 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
-        CoroutineScope(Dispatchers.Main).launch {
-            val apiService = API()
-
-            val response = apiService.createUserAsync(
-                username.text.toString(),
-                fullname.text.toString(),
-                password.text.toString(),
-                email.text.toString()
-            )
-
-            CurrentUser.onLoginSuccessful(
-                username.text.toString(), fullname.text.toString(),
-                ""
-            )
-        }
+        viewModel.createUser(
+            path,
+            username.text.toString(),
+            password.text.toString(),
+            fullname.text.toString(),
+            email.text.toString(),
+            this,
+            spinner
+        )
     }
 
 }

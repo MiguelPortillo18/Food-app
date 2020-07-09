@@ -15,13 +15,5 @@
         android:textSize="22sp"
         android:text="@string/placeholder"
         android:layout_margin="2dp"/>
-    <TextView
-        android:id="@+id/h2_ingredient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/font_style_grey_tablet"
-        android:textSize="18sp"
-        android:text="@string/placeholder"
-        android:layout_marginStart="@dimen/margin_small"/>
 
 </LinearLayout>

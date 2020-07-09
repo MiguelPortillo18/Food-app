@@ -24,9 +24,8 @@ import com.wrmh.allmyfood.adapters.CreateIngredientRecyclerAdapter
 import com.wrmh.allmyfood.adapters.CreateStepRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentCreateRecipeBinding
 import com.wrmh.allmyfood.models.CurrentUser
-import com.wrmh.allmyfood.models.IngredientModel
 import com.wrmh.allmyfood.models.RecipeModel
-import com.wrmh.allmyfood.models.StepModel
+import com.wrmh.allmyfood.views.RegisterActivityViewModel
 import kotlinx.android.synthetic.main.fragment_create_recipe.*
 
 
@@ -39,7 +38,7 @@ class CreateRecipeFragment : Fragment() {
     private lateinit var ingredientAdapter: CreateIngredientRecyclerAdapter
     private lateinit var stepAdapter: CreateStepRecyclerAdapter
     private lateinit var binding: FragmentCreateRecipeBinding
-    private lateinit var path: Uri
+    private var path: Uri = Uri.parse("")
 
     private val viewModel by lazy {
         ViewModelProvider(this).get(CreateRecipeViewModel::class.java)
@@ -80,8 +79,8 @@ class CreateRecipeFragment : Fragment() {
                 }
             }
 
-        var stepList = ArrayList<StepModel>()
-        var ingredientList = ArrayList<IngredientModel>()
+        var stepList = ArrayList<String>()
+        var ingredientList = ArrayList<String>()
 
         val deleteStep = ArrayList<Boolean>()
         val deleteIngredient = ArrayList<Boolean>()
@@ -91,7 +90,7 @@ class CreateRecipeFragment : Fragment() {
                 CreateIngredientRecyclerAdapter.OnChangeListener { element,
                                                                    pos,
                                                                    s ->
-                    ingredientList[pos].ingredient = s.toString()
+                    ingredientList[pos] = s.toString()
                 },
                 CreateIngredientRecyclerAdapter.OnClickListener { position, check ->
                     deleteIngredient[position] = check
@@ -103,7 +102,7 @@ class CreateRecipeFragment : Fragment() {
                 CreateStepRecyclerAdapter.OnChangeListener { element,
                                                              pos,
                                                              s ->
-                    stepList[pos].step = s.toString()
+                    stepList[pos] = s.toString()
                 },
                 CreateStepRecyclerAdapter.OnClickListener { position, check ->
                     deleteStep[position] = check
@@ -116,7 +115,7 @@ class CreateRecipeFragment : Fragment() {
         binding.btnAddIngredient.setOnClickListener {
             val auxList = ingredientList
 
-            if (auxList.size > 0 && auxList.last().ingredient.isEmpty()) {
+            if (auxList.size > 0 && auxList.last().isEmpty()) {
                 Toast.makeText(
                     this@CreateRecipeFragment.context, "Rellena primero todos los elementos",
                     Toast.LENGTH_LONG
@@ -124,10 +123,7 @@ class CreateRecipeFragment : Fragment() {
                     .show()
             } else {
                 auxList.add(
-                    IngredientModel(
-                        "",
-                        ""
-                    )
+                    ""
                 )
                 deleteIngredient.add(false)
             }
@@ -140,7 +136,7 @@ class CreateRecipeFragment : Fragment() {
         binding.btnAddStep.setOnClickListener {
             val auxList = stepList
 
-            if (auxList.size > 0 && auxList.last().step.isEmpty()) {
+            if (auxList.size > 0 && auxList.last().isEmpty()) {
                 Toast.makeText(
                     this@CreateRecipeFragment.context, "Rellena primero todos los elementos",
                     Toast.LENGTH_LONG
@@ -149,17 +145,11 @@ class CreateRecipeFragment : Fragment() {
             } else {
                 if (auxList.isEmpty())
                     auxList.add(
-                        StepModel(
-                            1,
-                            ""
-                        )
+                        ""
                     )
                 else
                     auxList.add(
-                        StepModel(
-                            auxList.last().order + 1,
-                            ""
-                        )
+                        ""
                     )
 
                 deleteStep.add(false)
@@ -204,6 +194,7 @@ class CreateRecipeFragment : Fragment() {
 
         binding.btnSaveRecipe.setOnClickListener {
             val recipeToSend = RecipeModel(
+                null,
                 CurrentUser.username!!,
                 binding.createRecipeName?.text.toString(),
                 binding.createRecipeDesc?.text.toString(),
@@ -211,6 +202,25 @@ class CreateRecipeFragment : Fragment() {
                 stepList,
                 ingredientList,
                 true,
+                ""
+            )
+
+            viewModel.createRecipe(
+                path, recipeToSend,
+                this@CreateRecipeFragment.context!!
+            )
+        }
+
+        binding.btnSaveRecipePublic?.setOnClickListener {
+            val recipeToSend = RecipeModel(
+                null,
+                CurrentUser.username!!,
+                binding.createRecipeName?.text.toString(),
+                binding.createRecipeDesc?.text.toString(),
+                null,
+                stepList,
+                ingredientList,
+                false,
                 ""
             )
 
@@ -243,7 +253,7 @@ class CreateRecipeFragment : Fragment() {
         }
     }
 
-    private fun updateStepRecyclerView(step: List<StepModel>) {
+    private fun updateStepRecyclerView(step: List<String>) {
         binding.recyclerViewCreateStep?.apply {
             layoutManager = LinearLayoutManager(this.context)
             adapter = stepAdapter
@@ -252,7 +262,7 @@ class CreateRecipeFragment : Fragment() {
         }
     }
 
-    private fun updateIngredientRecyclerView(ingredient: List<IngredientModel>) {
+    private fun updateIngredientRecyclerView(ingredient: List<String>) {
         binding.recyclerViewCreateIngredient?.apply {
             layoutManager = LinearLayoutManager(this.context)
             adapter = ingredientAdapter

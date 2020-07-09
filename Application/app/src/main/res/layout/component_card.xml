@@ -62,27 +62,12 @@
                 style="@style/font_style_grey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_wide"
+                android:layout_margin="@dimen/margin_small"
                 android:text="@string/lorem_long"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
 
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="35dp"
-            android:layout_gravity="end"
-            android:layout_margin="5dp"
-            android:layout_marginStart="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:contentDescription="@string/placeholder"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_container"
-            app:srcCompat="@drawable/ic_add_circle_black" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

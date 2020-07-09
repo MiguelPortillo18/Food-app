@@ -46,7 +46,7 @@ class MyListFragment : Fragment() {
         val list = arguments?.get("list") as ListModel
         val deleteList = ArrayList<Boolean>()
 
-        list.elements.forEach {
+        list.elements.forEach { _ ->
             deleteList.add(false)
         }
 

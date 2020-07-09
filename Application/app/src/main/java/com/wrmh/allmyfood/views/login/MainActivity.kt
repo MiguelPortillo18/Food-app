@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                 onClickBtnLogin(binding.etUsername, binding.etPassword)
             }
             spinner = progressBar1!!
+            spinner.bringToFront()
         }
 
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
@@ -114,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         if (username.text.isEmpty()) {
             Toast.makeText(
                 applicationContext,
-                "No puedes dejar campos vacios . . .",
+                R.string.empty_field,
                 Toast.LENGTH_LONG
             ).show()
 
@@ -160,13 +161,6 @@ class MainActivity : AppCompatActivity() {
     private fun handleSignInResult(task: Task<GoogleSignInAccount>) {
         val account = task.getResult(ApiException::class.java)
 
-        viewModel.checkForGoogleSignIn(this, account!!)
+        viewModel.checkForGoogleSignIn(this, account!!, spinner)
     }
 }
-
-/*
-TODO: Crear lista
-TODO: Limitar descripcion de receta a length <= 500
-TODO: Migue: Agregar items a la lista -> Crear elemento, agregar boton de menos para eliminar elemento y agregar boton para enviar a la API
-TODO: Migue: Crear receta -> Editar titulo, desc, ingredientes y pasos igual a items de la lista
- */

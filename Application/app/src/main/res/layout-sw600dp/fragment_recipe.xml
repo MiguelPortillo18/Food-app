@@ -42,7 +42,7 @@
                         <!-- Title and supporting text -->
                         <TextView
                             style="@style/font_style_grey_bold_title"
-                            android:textSize="24sp"
+                            android:textSize="28sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_wide"
@@ -62,10 +62,11 @@
 
                         <TextView
                             android:id="@+id/recipe_detail_desc"
-                            style="@style/font_style_grey"
+                            style="@style/font_style_grey_tablet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_wide"
+                            android:textSize="22sp"
                             android:text="@{viewModel.selectedProperty.desc}"
                             tools:text="@string/lorem_long"
                             android:textAppearance="?attr/textAppearanceBody2"
@@ -80,6 +81,7 @@
 
                         <TextView
                             style="@style/font_style_grey_bold_title"
+                            android:textSize="24sp"
                             android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -105,6 +107,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textAlignment="center"
+                            android:textSize="24sp"
                             android:padding="@dimen/margin_wide"
                             android:text="@string/text_preparacion" />
 
@@ -116,16 +119,6 @@
                             tools:itemCount="2"/>
 
                     </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/btn_return_recipe"
-                        android:layout_width="70dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="end"
-                        android:layout_marginStart="@dimen/margin_wide"
-                        android:layout_marginBottom="@dimen/margin_wide"
-                        android:tint="@android:color/black"
-                        app:srcCompat="@drawable/ic_baseline_remove_circle_black" />
 
                 </LinearLayout>
 

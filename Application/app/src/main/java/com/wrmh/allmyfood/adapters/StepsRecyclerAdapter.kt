@@ -11,7 +11,7 @@ import com.wrmh.allmyfood.models.StepModel
 import kotlinx.android.synthetic.main.component_non_editable_list_item.view.*
 
 class StepsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var items: List<StepModel> = ArrayList()
+    private var items: List<String> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return StepViewHolder(
@@ -32,7 +32,7 @@ class StepsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    fun submitList(steps: List<StepModel>) {
+    fun submitList(steps: List<String>) {
         items = steps
     }
 
@@ -41,8 +41,8 @@ class StepsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ) : RecyclerView.ViewHolder(itemView) {
         private val listEditable: TextView = itemView.view_list_item
 
-        fun bind(step: StepModel) {
-            listEditable.text = step.step
+        fun bind(step: String) {
+            listEditable.text = step
         }
     }
 }

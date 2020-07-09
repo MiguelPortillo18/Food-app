@@ -7,22 +7,24 @@ import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
-import okhttp3.RequestBody
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 const val BASE_URL = "https://food-api-wrmh.herokuapp.com/"
 
 interface API {
-    @FormUrlEncoded
+    @Multipart
     @POST("user")
     fun createUserAsync(
-        @Field("username") username: String,
-        @Field("fullname") fullname: String,
-        @Field("password") password: String,
-        @Field("email") email: String
+        @Part("username") username: String,
+        @Part("fullname") fullname: String,
+        @Part("password") password: String,
+        @Part("email") email: String,
+        @Part("userImage") auxImage: String,
+        @Part userImage: MultipartBody.Part
     ): Deferred<RegisterResponse>
 
     @GET("user")
@@ -48,12 +50,12 @@ interface API {
     @Multipart
     @POST("recipe")
     fun createRecipeAsync(
-        @Part("author") author: RequestBody,
-        @Part("title") title: RequestBody,
-        @Part("desc") desc: RequestBody,
-        @Part("steps") steps: RequestBody,
-        @Part("ingredients") ingredients: RequestBody,
-        @Part("privacy") privacy: RequestBody,
+        @Part("author") author: String,
+        @Part("title") title: String,
+        @Part("desc") desc: String,
+        @Part steps: List<MultipartBody.Part>,
+        @Part ingredients: List<MultipartBody.Part>,
+        @Part("privacy") privacy: Boolean,
         @Part recipeImage: MultipartBody.Part
     ): Deferred<DefaultResponse>
 
@@ -99,6 +101,7 @@ interface API {
                 .client(okHttpClient)
                 .baseUrl(BASE_URL)
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
+                .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(API::class.java)

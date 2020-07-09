@@ -9,7 +9,7 @@ import com.wrmh.allmyfood.models.IngredientModel
 import kotlinx.android.synthetic.main.component_ingredient.view.*
 
 class IngredientsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var items: List<IngredientModel> = ArrayList()
+    private var items: List<String> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return IngredientViewHolder(
@@ -27,7 +27,7 @@ class IngredientsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>
         return items.size
     }
 
-    fun submitList(ingredient: List<IngredientModel>) {
+    fun submitList(ingredient: List<String>) {
         items = ingredient
     }
 
@@ -35,11 +35,9 @@ class IngredientsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
         private val ingredientMain = itemView.h1_ingredient
-        private val ingredientSecond = itemView.h2_ingredient
 
-        fun bind(ingredient: IngredientModel) {
-            ingredientMain.text = ingredient.ingredient
-            ingredientSecond.text = ingredient.measure
+        fun bind(ingredient: String) {
+            ingredientMain.text = ingredient
         }
     }
 }

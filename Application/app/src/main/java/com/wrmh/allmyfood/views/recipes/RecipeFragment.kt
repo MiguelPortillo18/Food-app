@@ -50,10 +50,6 @@ class RecipeFragment : Fragment() {
         binding.viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(DetailRecipeViewModel::class.java)
 
-        binding.btnReturnRecipe.setOnClickListener {
-            it.findNavController().navigate(R.id.action_recipeFragment_to_exploreFragment)
-        }
-
         binding.recyclerViewIngredients?.apply {
             layoutManager = LinearLayoutManager(container?.context)
             adapter = ingredientAdapter
