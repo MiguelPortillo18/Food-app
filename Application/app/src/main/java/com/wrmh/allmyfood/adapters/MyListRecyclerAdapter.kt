@@ -50,6 +50,7 @@ class MyListRecyclerAdapter(
                     clickListener.onClick(position, (it as CheckBox).isChecked)
                 }
 
+                holder.itemView.requestFocus()
                 holder.bind(items[position])
             }
         }

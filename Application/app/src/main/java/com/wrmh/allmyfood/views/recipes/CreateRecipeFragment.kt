@@ -25,7 +25,6 @@ import com.wrmh.allmyfood.adapters.CreateStepRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentCreateRecipeBinding
 import com.wrmh.allmyfood.models.CurrentUser
 import com.wrmh.allmyfood.models.RecipeModel
-import com.wrmh.allmyfood.views.RegisterActivityViewModel
 import kotlinx.android.synthetic.main.fragment_create_recipe.*
 
 
@@ -193,41 +192,73 @@ class CreateRecipeFragment : Fragment() {
         }
 
         binding.btnSaveRecipe.setOnClickListener {
-            val recipeToSend = RecipeModel(
-                null,
-                CurrentUser.username!!,
-                binding.createRecipeName?.text.toString(),
-                binding.createRecipeDesc?.text.toString(),
-                null,
-                stepList,
-                ingredientList,
-                true,
-                ""
-            )
+            if (binding.createRecipeName?.text?.toString()?.isEmpty()!!) {
+                Toast.makeText(
+                    this@CreateRecipeFragment.context,
+                    R.string.empty_field, Toast.LENGTH_LONG
+                ).show()
+                binding.createRecipeName!!.requestFocus()
+            }
 
-            viewModel.createRecipe(
-                path, recipeToSend,
-                this@CreateRecipeFragment.context!!
-            )
+            if (binding.createRecipeDesc?.text?.toString()?.isEmpty()!!) {
+                Toast.makeText(
+                    this@CreateRecipeFragment.context,
+                    R.string.empty_field, Toast.LENGTH_LONG
+                ).show()
+                binding.createRecipeDesc!!.requestFocus()
+            } else {
+                val recipeToSend = RecipeModel(
+                    null,
+                    CurrentUser.username!!,
+                    binding.createRecipeName?.text.toString(),
+                    binding.createRecipeDesc?.text.toString(),
+                    null,
+                    stepList,
+                    ingredientList,
+                    true,
+                    ""
+                )
+
+                viewModel.createRecipe(
+                    path, recipeToSend,
+                    this@CreateRecipeFragment.context!!
+                )
+            }
         }
 
         binding.btnSaveRecipePublic?.setOnClickListener {
-            val recipeToSend = RecipeModel(
-                null,
-                CurrentUser.username!!,
-                binding.createRecipeName?.text.toString(),
-                binding.createRecipeDesc?.text.toString(),
-                null,
-                stepList,
-                ingredientList,
-                false,
-                ""
-            )
+            if (binding.createRecipeName?.text?.toString()?.isEmpty()!!) {
+                Toast.makeText(
+                    this@CreateRecipeFragment.context,
+                    R.string.empty_field, Toast.LENGTH_LONG
+                ).show()
+                binding.createRecipeName!!.requestFocus()
+            }
 
-            viewModel.createRecipe(
-                path, recipeToSend,
-                this@CreateRecipeFragment.context!!
-            )
+            if (binding.createRecipeDesc?.text?.toString()?.isEmpty()!!) {
+                Toast.makeText(
+                    this@CreateRecipeFragment.context,
+                    R.string.empty_field, Toast.LENGTH_LONG
+                ).show()
+                binding.createRecipeDesc!!.requestFocus()
+            } else {
+                val recipeToSend = RecipeModel(
+                    null,
+                    CurrentUser.username!!,
+                    binding.createRecipeName?.text.toString(),
+                    binding.createRecipeDesc?.text.toString(),
+                    null,
+                    stepList,
+                    ingredientList,
+                    false,
+                    ""
+                )
+
+                viewModel.createRecipe(
+                    path, recipeToSend,
+                    this@CreateRecipeFragment.context!!
+                )
+            }
         }
 
         return binding.root
