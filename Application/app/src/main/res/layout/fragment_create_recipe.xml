@@ -6,7 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,30 +17,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                app:cardCornerRadius="@dimen/margin_wide">
+                app:cardCornerRadius="@dimen/margin_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <!-- Buttons -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|end"
-                        android:orientation="vertical"
-                        android:padding="0dp">
+                        android:orientation="vertical">
 
                         <!-- Title and supporting text -->
                         <EditText
+                            android:id="@+id/create_recipe_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_wide"
                             android:layout_marginStart="@dimen/margin_small"
                             android:layout_marginEnd="@dimen/margin_big"
                             android:hint="@string/recipe_name_hint"
-                            android:padding="@dimen/margin_small" />
+                            android:padding="@dimen/margin_small"
+                            android:autofillHints="no"
+                            android:inputType="text"/>
 
                         <!-- Media -->
 
@@ -50,24 +50,29 @@
                             android:layout_width="match_parent"
                             android:layout_height="130dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/image_ph" />
+                            app:srcCompat="@drawable/image_ph"
+                            android:contentDescription="@string/placeholder" />
 
                         <TextView
                             android:id="@+id/tv_add_recipe_image"
-                            style="@style/font_small_style"
+                            style="@style/font_style_grey"
                             android:layout_width="wrap_content"
                             android:layout_height="20dp"
                             android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_wide"
                             android:text="@string/tv_add_recipe_image"
                             android:textAlignment="center"/>
 
                         <EditText
+                            android:id="@+id/create_recipe_desc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/margin_small"
                             android:layout_marginEnd="@dimen/margin_big"
                             android:hint="@string/add_desc_hint"
-                            android:padding="@dimen/margin_wide" />
+                            android:padding="@dimen/margin_wide"
+                            android:autofillHints="no"
+                            android:inputType="text" />
 
                     </LinearLayout>
 
@@ -81,97 +86,155 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/margin_wide"
-                            android:text="@string/add_ingredients_hint" />
+                            android:text="@string/add_ingredients_hint"
+                            android:textAlignment="center"/>
 
-                        <ListView
-                            android:id="@+id/listview"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_create_ingredient"
                             android:layout_width="match_parent"
-                            android:layout_height="197dp" />
+                            android:layout_height="200dp"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/component_editable_list_item"/>
 
-                        <EditText
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_small"
-                            android:layout_marginEnd="@dimen/margin_bigger"
-                            android:hint="@string/new_ingredient_hint"
-                            android:paddingStart="@dimen/margin_wide"
-                            android:paddingEnd="@dimen/margin_wide"
-                            android:paddingBottom="@dimen/margin_wide" />
+                            android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/btn_add_ingredient"
-                            android:layout_width="50dp"
-                            android:layout_height="35dp"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="@dimen/margin_small"
-                            android:layout_marginEnd="@dimen/margin_wide"
-                            app:srcCompat="@drawable/ic_add_circle_black" />
+                            <ImageView
+                                android:id="@+id/btn_add_ingredient"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/margin_wide"
+                                android:layout_marginBottom="@dimen/margin_wide"
+                                android:contentDescription="@string/placeholder"
+                                app:srcCompat="@drawable/ic_add_circle_black" />
+
+                            <ImageView
+                                android:id="@+id/btn_rm_ingredient"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/margin_wide"
+                                android:layout_marginBottom="@dimen/margin_wide"
+                                android:gravity="end"
+                                android:tint="@android:color/black"
+                                app:srcCompat="@drawable/ic_baseline_remove_circle_black"
+                                android:contentDescription="@string/placeholder" />
+
+                        </RelativeLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="339dp"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
                             style="@style/font_style_grey_bold_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAlignment="center"
                             android:padding="@dimen/margin_wide"
                             android:text="@string/add_steps_hint" />
 
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_create_step"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/component_editable_list_item" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/step_one_text" />
+                            android:orientation="horizontal">
 
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/step_two_text" />
+                            <ImageView
+                                android:id="@+id/btn_add_step"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/margin_wide"
+                                android:layout_marginBottom="@dimen/margin_wide"
+                                android:contentDescription="@string/placeholder"
+                                app:srcCompat="@drawable/ic_add_circle_black" />
 
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/step_three_text" />
+                            <ImageView
+                                android:id="@+id/btn_rm_step"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/margin_wide"
+                                android:layout_marginBottom="@dimen/margin_wide"
+                                android:gravity="end"
+                                android:tint="@android:color/black"
+                                app:srcCompat="@drawable/ic_baseline_remove_circle_black"
+                                android:contentDescription="@string/placeholder" />
 
-                        <CheckBox
-                            style="@style/checkBox_style"
-                            android:layout_width="wrap_content"
-                            android:layout_height="61dp"
-                            android:layout_marginStart="@dimen/margin_wide"
-                            android:text="@string/step_four_text" />
-
-                        <ImageView
-                            android:id="@+id/btn_add_step"
-                            android:layout_width="50dp"
-                            android:layout_height="35dp"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="@dimen/margin_wide"
-                            app:srcCompat="@drawable/ic_add_circle_black" />
+                        </RelativeLayout>
 
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btn_save_recipe"
-                        style="@style/button_style"
-                        android:layout_width="260dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/margin_bigger"
-                        android:layout_marginTop="@dimen/margin_big"
-                        android:layout_marginEnd="@dimen/margin_bigger"
-                        android:layout_marginBottom="@dimen/margin_big"
-                        android:paddingLeft="@dimen/margin_wide"
-                        android:paddingRight="@dimen/margin_wide"
-                        android:text="@string/save_recipe_text" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/alignItem"
+                            style="@style/font_style_grey_bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="@string/save_recipe_text"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <Button
+                            android:id="@+id/btn_save_recipe"
+                            style="@style/button_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_big"
+                            android:paddingLeft="@dimen/margin_wide"
+                            android:paddingRight="@dimen/margin_wide"
+                            android:text="@string/save_personal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/alignItem"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <Button
+                            android:id="@+id/btn_save_recipe_public"
+                            style="@style/button_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_big"
+                            android:paddingLeft="@dimen/margin_wide"
+                            android:paddingRight="@dimen/margin_wide"
+                            android:text="@string/save_public"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/alignItem"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 </LinearLayout>

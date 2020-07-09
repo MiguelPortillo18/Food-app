@@ -24,7 +24,7 @@ class MyListFragment : Fragment() {
     private lateinit var myListAdapter: MyListRecyclerAdapter
     private lateinit var binding: FragmentMylistBinding
 
-    private val viewModel by lazy{
+    private val viewModel by lazy {
         AlternateViewModel()
     }
 
@@ -58,20 +58,17 @@ class MyListFragment : Fragment() {
                                                                            s ->
                 list.elements[pos].desc = s.toString()
             },
-            MyListRecyclerAdapter.OnClickListener{ position, check ->
-                deleteList[position] = check
-            })
+                MyListRecyclerAdapter.OnClickListener { position, check ->
+                    deleteList[position] = check
+                }
+            )
 
         binding.viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(MyListViewModel::class.java)
 
-        binding.recyclerViewMl.apply {
-            layoutManager = LinearLayoutManager(container?.context)
-            myListAdapter.submitList(list.elements)
-            adapter = myListAdapter
-        }
+        updateRecyclerView(list)
 
-        binding.btnAddElement?.setOnClickListener {
+        binding.btnAddElement.setOnClickListener {
             val auxList = list.elements.toMutableList()
 
             if (auxList.size > 0 && auxList.last().desc.isEmpty()) {
@@ -80,8 +77,7 @@ class MyListFragment : Fragment() {
                     Toast.LENGTH_LONG
                 )
                     .show()
-            }
-            else {
+            } else {
                 auxList.add(
                     ElementModel(
                         "",
@@ -96,11 +92,11 @@ class MyListFragment : Fragment() {
             updateRecyclerView(list)
         }
 
-        binding.btnRmElement?.setOnClickListener {
+        binding.btnRmElement.setOnClickListener {
             val auxList = list.elements.toMutableList()
 
-            for(i in 0 until auxList.size - 1){
-                if(deleteList[i]) {
+            for (i in 0 until auxList.size - 1) {
+                if (deleteList[i]) {
                     deleteList.removeAt(i)
                     auxList.removeAt(i)
                 }
@@ -111,11 +107,23 @@ class MyListFragment : Fragment() {
             updateRecyclerView(list)
         }
 
-        binding.saveListApi?.setOnClickListener {
-            if(list._id == "UNCREATED_LIST")
-                viewModel.createUserList(list, application.applicationContext)
-//            else
-//                binding.viewModel.updateUserList()
+        binding.saveListApi.setOnClickListener {
+            list.name = binding.listEditableName?.text.toString()
+
+            if (list.name.isEmpty()) {
+                Toast.makeText(
+                    application.applicationContext, R.string.empty_field,
+                    Toast.LENGTH_LONG
+                ).show()
+
+                binding.listEditableName?.requestFocus()
+            } else {
+
+                if (list._id == "UNCREATED_LIST")
+                    viewModel.createUserList(list, application.applicationContext)
+                else
+                    viewModel.updateUserList(list, application.applicationContext)
+            }
         }
 
         return binding.root

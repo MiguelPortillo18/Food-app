@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation"
     app:startDestination="@id/welcomeFragment">
 
     <fragment
@@ -45,15 +44,23 @@
         <action
             android:id="@+id/action_myRecipesFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_myRecipesFragment_to_createRecipeFragment"
+            app:destination="@id/createRecipeFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/createRecipeFragment"
-        android:name="com.wrmh.allmyfood.views.CreateRecipeFragment"
+        android:name="com.wrmh.allmyfood.views.recipes.CreateRecipeFragment"
         android:label="fragment_create_recipe"
-        tools:layout="@layout/fragment_create_recipe" />
+        tools:layout="@layout/fragment_create_recipe" >
+        <action
+            android:id="@+id/action_createRecipeFragment_to_myRecipesFragment"
+            app:destination="@id/myRecipesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="com.wrmh.allmyfood.views.RecipeFragment"
+        android:name="com.wrmh.allmyfood.views.recipes.RecipeFragment"
         android:label="fragment_recipe"
         tools:layout="@layout/fragment_recipe">
         <argument

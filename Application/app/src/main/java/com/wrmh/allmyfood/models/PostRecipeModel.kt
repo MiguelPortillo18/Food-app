@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class RecipeModel(
+data class PostRecipeModel(
     var author: String,
     var title: String,
     var desc: String,

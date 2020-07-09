@@ -33,7 +33,7 @@ class SelectionListViewModel : ViewModel() {
         getUserLists()
     }
 
-    private fun getUserLists() {
+    fun getUserLists() {
         coroutineScope.launch {
             val getListsDeferred = API().getUserListsAsync(CurrentUser.username!!)
 

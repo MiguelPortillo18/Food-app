@@ -60,7 +60,7 @@ class SelectionListFragment : Fragment() {
             }
         })
 
-        binding.btnAddList?.setOnClickListener {
+        binding.btnAddList.setOnClickListener {
             val list = ListModel("UNCREATED_LIST", "", "", ArrayList())
 
             val bundle = bundleOf("list" to list)
@@ -89,6 +89,7 @@ class SelectionListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        viewModel.getUserLists()
         updateRecyclerView()
     }
 }

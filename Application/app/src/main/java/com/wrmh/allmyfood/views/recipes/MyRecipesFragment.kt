@@ -63,6 +63,10 @@ class MyRecipesFragment : Fragment() {
             updateRecyclerView()
         }
 
+        binding.btnAddRecipe?.setOnClickListener {
+            this.findNavController().navigate(R.id.action_myRecipesFragment_to_createRecipeFragment)
+        }
+
         return binding.root
     }
 

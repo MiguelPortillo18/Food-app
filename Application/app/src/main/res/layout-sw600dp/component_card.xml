@@ -70,7 +70,6 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/btn_extend_recipe"
             android:layout_width="70dp"
             android:layout_height="50dp"
             android:layout_gravity="end"

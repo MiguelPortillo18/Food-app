@@ -1,4 +1,4 @@
-package com.wrmh.allmyfood.views
+package com.wrmh.allmyfood.views.recipes
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,7 +17,6 @@ import com.wrmh.allmyfood.adapters.StepsRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentRecipeBinding
 import com.wrmh.allmyfood.factory.RecipesViewModelFactory
 import com.wrmh.allmyfood.models.RecipeModel
-import com.wrmh.allmyfood.views.recipes.DetailRecipeViewModel
 
 /**
  * A simple [Fragment] subclass.

@@ -45,18 +45,7 @@ class RecipesViewModel : ViewModel() {
                 if (apiResponse.recipes.isEmpty())
                     throw java.lang.Exception()
             } catch (e: Exception) {
-                _recipes.value = arrayListOf(
-                    RecipeModel(
-                        "",
-                        "Aun no existen recetas",
-                        "Agrega una desde el menú (pública) para que puedas visualizarla acá",
-                        null,
-                        null,
-                        null,
-                        false,
-                        "INF"
-                    )
-                )
+                _recipes.value = ArrayList()
             } finally {
                 callbackFunction()
             }
@@ -75,18 +64,7 @@ class RecipesViewModel : ViewModel() {
                     throw java.lang.Exception()
 
             } catch (e: Exception) {
-                _recipes.value = arrayListOf(
-                    RecipeModel(
-                        "",
-                        "Aun no existen recetas",
-                        "Agrega una desde el menú (pública) para que puedas visualizarla acá",
-                        null,
-                        null,
-                        null,
-                        false,
-                        "INF"
-                    )
-                )
+                _recipes.value = ArrayList()
             }
             finally {
                 callbackFunction()

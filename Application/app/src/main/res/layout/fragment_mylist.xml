@@ -33,6 +33,7 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:id="@+id/list_editable_name"
                         style="@style/font_style_grey_bold_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

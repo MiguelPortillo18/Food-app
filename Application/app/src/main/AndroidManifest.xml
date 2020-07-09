@@ -3,15 +3,27 @@
     package="com.wrmh.allmyfood">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
         android:icon="@drawable/ic_app_logo"
         android:label="@string/title_Allmyfood"
         android:roundIcon="@drawable/ic_app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.myfileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider" />
+        </provider>
+
         <activity android:name="com.wrmh.allmyfood.views.login.MainActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:screenOrientation="portrait">
