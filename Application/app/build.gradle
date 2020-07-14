@@ -4,6 +4,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
+    signingConfigs {
+        config {
+            storeFile file('C:\\Users\\Walter\\Documents\\Keys\\key.jks')
+            keyAlias 'key0'
+            storePassword 'pataspatas'
+            keyPassword 'pataspatas'
+        }
+    }
     compileOptions {
         targetCompatibility = "8"
         sourceCompatibility = "8"
@@ -32,6 +40,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
                     'proguard-rules.pro'
+            debuggable true
+            signingConfig signingConfigs.config
         }
     }
 }
