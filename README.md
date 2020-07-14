@@ -15,8 +15,14 @@
   
 ## Summary
 [Tablero](#tablero-de-equipo)<br>
-[API](#trabajo-de-api)<br>
-[App](#trabajo-de-la-app)<br>
+[App](#app)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Usuario de prueba](#app)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Funcionalidades](#funcionalidades)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Google Sign In](#google-sign-in)<br>
+[API](#api)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Modelos](#modelos)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Rutas](#rutas)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[ImageParser](#imageparser)<br>
 
 <hr>
 
