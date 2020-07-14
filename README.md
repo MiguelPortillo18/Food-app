@@ -1,6 +1,7 @@
-  <h1 align="center">All My Food <br><br>
-  <img src="./Img/app_logo.png" width="150px">
+  <h1 align="center">All My Food<br><br>
+  <a href="https://play.google.com/store/apps/details?id=com.wrmh.allmyfood" target="_blank"><img src="./Img/app_logo.png" width="150px"></a>
   </h1>
+  <p align="center">(clic en la imagen para ir a descarga)</p>
   <p align="center">
     <a href="https://github.com/UCASV/entrega-de-proyecto-pdm-0120-editorial/releases/tag/v0.1.0">
       <img src="https://img.shields.io/badge/pre%20release-v0.1.0-blue"/>
