@@ -23,6 +23,29 @@
 ## Tablero de equipo
 [Notion.so](https://www.notion.so/Food-App-65fa094f2eb24290aebd059e03d679fa)
 
+## APP
+
+### Usuario de prueba
+
+| Clave     | Tipo              |
+|-----------|-------------------|
+| usuario   | dei.uca           |
+| password  | admin             |
+
+### Funcionalidades
+
+* Crear receta, ya sea pública o privada
+* Crear una lista, siempre son privadas
+* Actualizar una lista
+* Registrarse
+* Logearse
+* Logearse con Google
+* Ver todas las recetas que tienen configuración pública (explorar)
+* Ver todas las recetas que tienen configuración privada (mis recetas)
+
+### Google Sign In
+La aplicación cuenta on OAUTH 2.0 de Google para que los usuarios puedan iniciar sesión de una manera más eficiente y sencilla, almacenando sus datos (no sensibles) en la API y así llevar un registro de sus elementos y preferencias.
+
 ## API
 La apliación está alimentada por la API foodAPI. En un overview, se conecta a una BD en MongoAtlas, y su deploy se encuentra en heroku.
 
