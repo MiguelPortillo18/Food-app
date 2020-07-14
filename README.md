@@ -26,6 +26,47 @@
 ## API
 La apliación está alimentada por la API foodAPI. En un overview, se conecta a una BD en MongoAtlas, y su deploy se encuentra en heroku.
 
+## Modelos
+
+### User
+
+| Clave     | Tipo              |
+|-----------|-------------------|
+| username  | String            |
+| fullname  | String            |
+| password  | String            |
+| email     | String            |
+| userImage | File              |
+| lists     | Array[ListSchema] |
+
+### List
+
+| Clave    | Tipo                 |
+|----------|----------------------|
+| name     | String               |
+| listType | String               |
+| elements | Array[ElementSchema] |
+
+### Element
+
+| Clave    | Tipo   |
+|----------|--------|
+| desc     | String |
+| quantity | String |
+
+### Recipe
+
+| Clave       | Tipo          |
+|-------------|---------------|
+| author      | String        |
+| title       | String        |
+| desc        | String        |
+| recipeType  | String        |
+| steps       | Array[String] |
+| ingredients | Array[String] |
+| privacy     | Boolean       |
+| recipeImage | String        |
+
 ## Rutas
 **Main** https://food-api-wrmh.herokuapp.com/
 
@@ -40,5 +81,10 @@ La apliación está alimentada por la API foodAPI. En un overview, se conecta a 
 | GET    | /recipe                                                                | Obtiene todas las recetas con privacidad pública                       |
 | GET    | /recipe?author                                                        | Obtiene todas las recetas de un usuario                                |
 | POST   | /recipe/:author/:title/:desc/:ingredients/:steps/:privacy/:recipeImage | Crea una receta, la privacidad depende de la configuración del usuario |
+
+## ImageParser
+Los archivos de tipo imagen son recibidos en la API y trabajados con **multer, multerS3, y AWS** (npm). Cada archivo es filtrado por multer, tomando en cuenta los <pre>image/*</pre> provistos por JavaScript.
+MulterS3 se conecta a un bucket S3 de AWS para subir la image, para asegurar unicidad en nombres se toma el ISOString de la fecha en la que es recibido más el nombre original del
+archivo. Se limitan a un tamaño de 1024 * 1024 * 5.
 
 Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
