@@ -7,6 +7,7 @@ object CurrentUser {
     var fullname: String? = null
     var userImage: String? = null
     var loginTimeStamp: Date? = null
+    var previousFragmentForRecipe: String? = null
 
     fun onLoginSuccessful(username: String, fullname: String, userImage: String) {
         this.username = username

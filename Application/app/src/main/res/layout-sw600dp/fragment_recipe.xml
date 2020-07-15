@@ -120,6 +120,26 @@
 
                     </LinearLayout>
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/btn_delete_recipe_public"
+                            style="@style/button_style"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_big"
+                            android:paddingLeft="@dimen/margin_wide"
+                            android:paddingRight="@dimen/margin_wide"
+                            android:text="@string/delete" />
+
+                    </RelativeLayout>
+
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>

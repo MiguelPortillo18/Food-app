@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class RecipeModel(
-    var id: String?,
+    var _id: String?,
     var author: String,
     var title: String,
     var desc: String,

@@ -25,6 +25,7 @@ import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.databinding.ActivityMainBinding
 import com.wrmh.allmyfood.models.CurrentUser
 import com.wrmh.allmyfood.views.HomeActivity
+import com.wrmh.allmyfood.views.RecoverActivity
 import com.wrmh.allmyfood.views.RegisterActivity
 import timber.log.Timber
 import kotlin.reflect.typeOf
@@ -56,6 +57,11 @@ class MainActivity : AppCompatActivity() {
             btnLogin.setOnClickListener {
                 onClickBtnLogin(binding.etUsername, binding.etPassword)
             }
+
+            tvForgotpass.setOnClickListener {
+                startActivity(Intent(this@MainActivity, RecoverActivity::class.java))
+            }
+
             spinner = progressBar1!!
             spinner.bringToFront()
         }

@@ -149,19 +149,61 @@
 
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btn_save_recipe"
-                        style="@style/button_style_tablet"
-                        android:layout_width="260dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/margin_bigger"
-                        android:layout_marginTop="@dimen/margin_big"
-                        android:layout_marginEnd="@dimen/margin_bigger"
-                        android:layout_marginBottom="@dimen/margin_big"
-                        android:paddingLeft="@dimen/margin_wide"
-                        android:paddingRight="@dimen/margin_wide"
-                        android:text="@string/save_recipe_text" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/alignItem"
+                            style="@style/font_style_grey_bold_title_tablet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="@string/save_recipe_text"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/btn_save_recipe"
+                            style="@style/button_style"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_big"
+                            android:paddingLeft="@dimen/margin_wide"
+                            android:paddingRight="@dimen/margin_wide"
+                            android:text="@string/save_personal" />
+
+                        <Button
+                            android:id="@+id/btn_save_recipe_public"
+                            style="@style/button_style"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_wide"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginBottom="@dimen/margin_big"
+                            android:paddingLeft="@dimen/margin_wide"
+                            android:paddingRight="@dimen/margin_wide"
+                            android:text="@string/save_public" />
+
+                    </RelativeLayout>
 
 
                 </LinearLayout>

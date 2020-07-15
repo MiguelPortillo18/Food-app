@@ -17,6 +17,8 @@ class AlternateViewModel : ViewModel(){
     private val viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
+    lateinit var callback: () -> Unit
+
     fun createUserList(listToCreate: ListModel, context: Context){
         coroutineScope.launch {
 
@@ -61,6 +63,27 @@ class AlternateViewModel : ViewModel(){
                     throw java.lang.Exception()
 
                 Toast.makeText(context, R.string.update_message, Toast.LENGTH_LONG).show()
+            } catch (e: Exception) {
+                Toast.makeText(context, R.string.error, Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    fun deleteUserList(id: String, context: Context){
+        coroutineScope.launch {
+            val deleteListDeferred = API().deleteListAsync(
+                CurrentUser.username!!,
+                id
+            )
+
+            try {
+                val apiResponse = deleteListDeferred.await()
+
+                if(apiResponse.error)
+                    throw java.lang.Exception()
+
+                callback()
+                Toast.makeText(context, "Lista eliminada ...", Toast.LENGTH_LONG).show()
             } catch (e: Exception) {
                 Toast.makeText(context, R.string.error, Toast.LENGTH_LONG).show()
             }

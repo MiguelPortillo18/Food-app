@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.adapters.RecipeRecyclerAdapter
 import com.wrmh.allmyfood.databinding.FragmentMyRecipesBinding
+import com.wrmh.allmyfood.models.CurrentUser
 
 /**
  * A simple [Fragment] subclass.
@@ -51,6 +52,8 @@ class MyRecipesFragment : Fragment() {
         viewModel.navigateToSelectedProperty.observe(viewLifecycleOwner, Observer {
             if(it != null){
                 val bundle = bundleOf("recipe" to it)
+
+                CurrentUser.previousFragmentForRecipe = "my"
 
                 this.findNavController()
                     .navigate(R.id.action_myRecipesFragment_to_recipeFragment, bundle)

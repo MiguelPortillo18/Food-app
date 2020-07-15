@@ -11,7 +11,6 @@ import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-
     private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {

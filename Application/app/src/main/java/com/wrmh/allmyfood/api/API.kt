@@ -28,6 +28,11 @@ interface API {
     ): Deferred<RegisterResponse>
 
     @GET("user")
+    fun recoverPasswordAsync(
+        @Query("email") email: String
+    ): Deferred<LoginResponse>
+
+    @GET("user")
     fun loginUserWithNameAsync(
         @Query("username") username: String,
         @Query("password") password: String
@@ -46,6 +51,11 @@ interface API {
 
     @GET("recipe")
     fun exploreRecipesAsync(): Deferred<RecipeResponse>
+
+    @DELETE("recipe/{id}")
+    fun deleteRecipeAsync(
+        @Path("id") _id: String
+    ) : Deferred<DefaultResponse>
 
     @Multipart
     @POST("recipe")
@@ -73,6 +83,12 @@ interface API {
     fun updateListAsync(
         @Body listData: PostListModel
     ): Deferred<DefaultResponse>
+
+    @DELETE("list/{username}/{id}")
+    fun deleteListAsync(
+        @Path("username") username: String,
+        @Path("id") _id: String
+    ) : Deferred<DefaultResponse>
 
     companion object {
         operator fun invoke(): API {

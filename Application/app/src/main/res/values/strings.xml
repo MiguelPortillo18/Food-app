@@ -46,7 +46,7 @@
     <string name="step_two_text">Paso 2</string>
     <string name="step_four_text">Nuevo paso…</string>
     <string name="step_three_text">Paso 3</string>
-    <string name="save_recipe_text">Guardar receta</string>
+    <string name="save_recipe_text">Acciones</string>
     <string name="selection_list_text">Listas de compras</string>
     <string name="k_username">username</string>
     <string name="k_fullname">fullname</string>
@@ -68,4 +68,7 @@
     <string name="save_personal">Personal</string>
     <string name="save_public">Pública</string>
     <string name="server_client_id">517404894441-mapmtk28eimlafcrrkacs37jab8mkp75.apps.googleusercontent.com</string>
+    <string name="delete">Borrar</string>
+    <string name="recover_pass">Recibirás un correo con tu nueva contraseña</string>
+    <string name="recover_txt">Recuperar</string>
 </resources>

@@ -2,14 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wrmh.allmyfood">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:requestLegacyExternalStorage="true"
         android:icon="@drawable/ic_app_logo"
         android:label="@string/title_Allmyfood"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/ic_app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -24,25 +24,37 @@
                 android:resource="@xml/file_provider" />
         </provider>
 
-        <activity android:name="com.wrmh.allmyfood.views.login.MainActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".views.login.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.wrmh.allmyfood.views.RegisterActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".views.RecoverActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.OPENABLE" />
             </intent-filter>
         </activity>
-        <activity android:name="com.wrmh.allmyfood.views.HomeActivity">
+        <activity
+            android:name=".views.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,4 +62,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

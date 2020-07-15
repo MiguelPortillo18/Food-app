@@ -182,7 +182,7 @@
 
                     </LinearLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -202,9 +202,17 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.0" />
 
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
                         <Button
                             android:id="@+id/btn_save_recipe"
                             style="@style/button_style"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/margin_wide"
@@ -212,15 +220,13 @@
                             android:layout_marginBottom="@dimen/margin_big"
                             android:paddingLeft="@dimen/margin_wide"
                             android:paddingRight="@dimen/margin_wide"
-                            android:text="@string/save_personal"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/alignItem"
-                            app:layout_constraintVertical_bias="1.0" />
+                            android:text="@string/save_personal" />
 
                         <Button
                             android:id="@+id/btn_save_recipe_public"
                             style="@style/button_style"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_wide"
@@ -228,14 +234,9 @@
                             android:layout_marginBottom="@dimen/margin_big"
                             android:paddingLeft="@dimen/margin_wide"
                             android:paddingRight="@dimen/margin_wide"
-                            android:text="@string/save_public"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/alignItem"
-                            app:layout_constraintVertical_bias="1.0" />
+                            android:text="@string/save_public" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
+                    </RelativeLayout>
 
                 </LinearLayout>
 

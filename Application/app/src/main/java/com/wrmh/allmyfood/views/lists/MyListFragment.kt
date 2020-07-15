@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrmh.allmyfood.R
 import com.wrmh.allmyfood.adapters.MyListRecyclerAdapter
@@ -107,6 +108,14 @@ class MyListFragment : Fragment() {
             updateRecyclerView(list)
         }
 
+        viewModel.callback = {
+            this@MyListFragment.findNavController().popBackStack()
+        }
+
+        if(list._id == "UNCREATED_LIST"){
+            binding.deleteListApi.visibility = View.INVISIBLE
+        }
+
         binding.saveListApi.setOnClickListener {
             list.name = binding.listEditableName?.text.toString()
 
@@ -124,6 +133,10 @@ class MyListFragment : Fragment() {
                 else
                     viewModel.updateUserList(list, application.applicationContext)
             }
+        }
+
+        binding.deleteListApi.setOnClickListener {
+            viewModel.deleteUserList(list._id, application.applicationContext)
         }
 
         return binding.root

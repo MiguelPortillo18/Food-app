@@ -77,18 +77,6 @@
                             android:contentDescription="@string/placeholder"
                             app:srcCompat="@drawable/ic_add_circle_black" />
 
-                        <Button
-                            android:id="@+id/save_list_api"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            style="@style/button_style"
-                            android:text="@string/save"
-                            tools:ignore="RelativeOverlap" />
-
                         <ImageView
                             android:id="@+id/btn_rm_element"
                             android:layout_width="60dp"
@@ -101,6 +89,38 @@
                             android:tint="@android:color/black"
                             app:srcCompat="@drawable/ic_baseline_remove_circle_black"
                             android:contentDescription="@string/placeholder" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/save_list_api"
+                            style="@style/button_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/margin_wide"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/save"
+                            tools:ignore="RelativeOverlap" />
+
+                        <Button
+                            android:id="@+id/delete_list_api"
+                            style="@style/button_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/margin_wide"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/delete"
+                            tools:ignore="RelativeOverlap" />
 
                     </RelativeLayout>
 
